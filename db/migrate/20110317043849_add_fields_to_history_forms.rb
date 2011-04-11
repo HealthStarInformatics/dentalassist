@@ -18,7 +18,7 @@ class AddFieldsToHistoryForms < ActiveRecord::Migration
 	add_column :medicalhistories, :closest_relative, :string
 	add_column :medicalhistories, :closest_relative_phone, :string
 	add_column :medicalhistories, :relation_to_other_person, :string
-	add_column :medicalhistories, :refered_by :string
+	add_column :medicalhistories, :refered_by, :string
   end
 
   def self.down
