@@ -1,0 +1,16 @@
+<% title "Forms" %>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @forms.fname %>
+</p>
+<p>
+  <strong>Lname:</strong>
+  <%= @forms.lname %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_forms_path(@forms) %> |
+  <%= link_to "Destroy", @forms, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", forms_path %>
+</p>

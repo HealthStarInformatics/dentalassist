@@ -1,0 +1,19 @@
+<% title "Forms" %>
+
+<table>
+  <tr>
+    <th>Fname</th>
+    <th>Lname</th>
+  </tr>
+  <% for forms in @forms %>
+    <tr>
+      <td><%= forms.fname %></td>
+      <td><%= forms.lname %></td>
+      <td><%= link_to "Show", forms %></td>
+      <td><%= link_to "Edit", edit_forms_path(forms) %></td>
+      <td><%= link_to "Destroy", forms, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<!--<p><%= link_to "New Forms", new_forms_path %></p>-->

@@ -1,0 +1,8 @@
+<%= form_for @forms do |f| %>
+  	<%= f.error_messages %>
+
+	<%= f.input :fname, :hint => 'hello'%>
+	<%= f.input :lname, :hint => 'test' %>
+	<%= f.button :submit %>
+
+<% end %>

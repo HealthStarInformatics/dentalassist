@@ -1,0 +1,169 @@
+<%= simple_form_for @medicalhistory do |f| %>
+    <%= f.error_messages %>
+
+	<fieldset>
+	  <legend>ABOUT YOU</legend>
+			<div class="row">
+				<div class="text-field">
+					<%= f.input :fname, :label=>"Name", :input_html => {:class=>"fTextInputRow"} %>
+				</div>
+				<div class="text-field">
+					<%= f.input :lastname, :label=>"Preferred Name", :label_html => {:class => "large"}%>
+				</div>
+				<div class="text-field">
+					<%= f.input :sex, :label=>false, :collection => %w{Male Female}, :as => :radio, :input_html => {:size => 20}%>
+				</div>
+			</div>
+			<div class="row">
+				<div class="text-field">
+					<%= f.input :marital, :label=>"Marital", :collection => %w{Single Married Child Other}, :include_blank => false%>
+				</div>
+				<div class="text-field">
+					<%= f.input :dob, :label_html => {:class => 'small'},:label=>"Birth Date", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'date', :size=>7}%>
+				</div>
+				<div class="text-field">
+					<%= f.input :age, :label=>"Age", :label_html => {:class => 'smaller'}, :as => :string, :input_html => {:size => 1}, :input_html => {:id => 'age'}%>
+				</div>
+				<div class="text-field">
+					<%= f.input :ssn, :label_html=> {:class => 'smaller'},:label=>"SS#", :input_html => {:id => 'ssn'}%>
+				</div>
+			</div>
+			<div class="row">
+				<div class="text-field">
+					<%= f.input :address, :label => "Home Address", :label_html => {:class=>'large'}, :input_html => {:size => 32}%>	
+				</div>
+				<div class="text-field">
+					<%= f.input :city, :label => "City", :label_html => {:class=>'smaller'}, :input_html => {:size => 10}%>	
+				</div>
+				<div class="text-field">
+					<%= f.input :state, :label => "State", :label_html => {:class=>'smaller'}, :collection => State::NAMES, :include_blank => false%>	
+				</div>
+				<div class="text-field">
+					<%= f.input :zip, :label => "Zip", :label_html => {:class=>'smaller'}, :input_html => {:size => 4, :id => 'zip'}%>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="text-field">
+					<%= f.input :home_phone, :label_html => {:class => 'large'}, :input_html => {:id => 'phone'}%>	
+				</div>
+				<div class="text-field">
+					<%= f.input :biss_phone, :label => "Work Phone" , :label_html => {:class => 'large'}, :input_html => {:id => 'phoneExt'}%>
+				</div>
+				<div class="text-field">
+					<%= f.input :pager , :input_html => {:id => 'pager'}%>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="text-field">
+					<%= f.input :cell_phone, :label_html => {:class => 'large'}, :input_html => {:id => 'cellphone'}%>	
+				</div>
+				<div class="text-field">
+					<%= f.input :email, :label_html => {:class => 'large'}%>
+				</div>
+			</div>
+			<div class="row">
+				<div class="text-field">
+					<%= f.input :emp, :label => "Employer", :label_html => {:class => 'large'}%>	
+				</div>
+				<div class="text-field">
+					<%= f.input :emp_term, :label => "How long there?" , :label_html => {:class => 'large'}%>
+				</div>
+				<div class="text-field">
+					<%= f.input :occupation %>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="text-field">
+					<%= f.input :emp_address, :label => "Employer Address", :label_html => {:class => 'large'}, :input_html => {:size => 32}%>	
+				</div>
+				<div class="text-field">
+					<%= f.input :emp_city, :label => "City", :label_html => {:class => 'smaller'}, :input_html => {:size => 10}%>
+				</div>
+				<div class="text-field">
+					<%= f.input :emp_state, :label => "State", :label_html => {:class=>'smaller'}, :collection => State::NAMES, :include_blank => false%>	
+				</div>
+				<div class="text-field">
+					<%= f.input :emp_zip, :label => "Zip", :label_html => {:class=>'smaller'}, :input_html => {:size => 4, :id => 'zipo'}%>	
+				</div>
+			</div>
+	  </legend>
+	</fieldset>
+
+
+
+
+<!--
+    <div class="row">
+        <div class="text-field">
+			<%= f.input :fname, :label=>"First Name" %>
+        </div>
+        <div class="text-field">
+			<%= f.input :lastname%>
+        </div>
+        <div class="text-field">
+			<%= f.input :middle_name %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-field">
+			<%= f.input :home_phone, :as => :string %>
+        </div>
+        <div class="text-field">
+			<%= f.input :biss_phone,:label => "Phone", :as => :string%>
+        </div>
+        <div class="text-field">
+			<%= f.input :address %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="text-field">
+	<%= f.input :city %>
+        </div>
+        <div class="text-field">
+	<%= f.input :state %>
+        </div>
+        <div class="text-field">
+	<%= f.input :zip %> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="text-field">
+	<%= f.input :occupation %>
+        </div>
+        <div class="text-field">
+	<%= f.input :ssn %>
+        </div>
+        <div class="text-field">
+	<%= f.input :dob, :as => :string %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="text-field">
+	<%= f.input :sex %>
+        </div>
+        <div class="text-field">
+	<%= f.input :height %>
+        </div>
+        <div class="text-field">
+	<%= f.input :weight, :as => :string %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="text-field">
+	<%= f.input :marital %>
+        </div>
+        <div class="text-field">
+	<%= f.input :spouse_name %>
+        </div>
+        <div class="text-field">
+	<%= f.input :closest_relative %>
+        </div>
+    </div>
+-->
+	<%= f.button :submit %>
+<% end %>
+
