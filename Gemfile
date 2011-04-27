@@ -12,7 +12,7 @@ gem "mocha", :group => :test
 gem "authlogic"
 gem "rails3-generators"
 gem "pdfkit", '0.4.6'
-gem 'haml' 
-gem 'haml-rails' 
+#gem 'haml' 
+#gem 'haml-rails' 
 gem "jquery-rails"
-gem 'compass', ">= 0.10.6" 
+#gem 'compass', ">= 0.10.6" 
