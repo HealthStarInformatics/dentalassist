@@ -1,0 +1,39 @@
+<fieldset>
+  <legend>Dental Health Questionnaire</legend>
+	<p class="line_health">
+     We believe that each patient deserves to know what their current level of dental health is, how they got there, and what treatment options are available to help them reach the level of health that they deserve. This begins with a careful diagnosis and personalized treatment plan. We will perform a comprehensive oral examination of your teeth, gums, jaw joints, bite and soft tissues. We will also take the appropriate x-rays, and when beneficial we may take additional diagnostic records such as photographs or casts of your teeth to further evaluate areas of concern.
+Once all your records have been completed they will be carefully evaluated to determine your current level of dental health and how you got there. We will review our findings with you and discuss your treatment options. A personalized treatment plan will then be developed to help you achieve the goals we set together.
+	</p>
+    </br></br>
+	<p class="line_health">Please help us better understand your dental health	needs and goals by answering the following questions:</p>
+
+	<p id="question">Have you had a full mouth set of x-rays (other than routine cavity detecting x-rays) within the last 3 years</p>
+	<%= f.input :x_rays, :label=>false, :collection => %w{Yes No}, :as => :radio%><br>
+
+	<p id="question_short">Feal of going to the dentist</p>
+	<b><%= f.input :feal_dentist, :label=>false, :collection => %w{low mode high}, :as => :radio%><br></b>
+
+	<p id="question_short">My mouth and teeth are</p>
+	<b><%= f.input :mouth_teeth, :label=>false, :collection => %w{very moderately not\ comfortable}, :as => :radio%><br></b>
+
+	<p id="question">Appearance of my teeth</p>
+	<b><%= f.input :teeth_appearance, :label=>false, :collection => %w{very\ satisfied satisfied disssatisfied }, :as => :radio%><br></b>
+
+	<p id="question">I think my present state of dental health is </p>
+	<b><%= f.input :state_of_health, :label=>false, :collection => %w{excellent good fair poor}, :as => :radio%><br></b>
+
+	<p id="question">I would say that my main concerns with my dental health are</p>
+	<b><%= f.input :main_concerns, :label=>false%><br></b>
+
+	<p id="question">I am interested in a smile evaluation and personalized treatment plan to enhance my smile</p>
+	<b><%= f.input :enhance_smile, :label=>false, :collection => %w{yes no}, :as => :radio%><br></b>
+
+	<p id="question">I am interested in a smile evaluation and personalized treatment plan to enhance my smile</p>
+	<b><%= f.input :enhance_smile, :label=>false, :collection => %w{yes no}, :as => :radio%><br></b>
+
+	<p class="line_health">
+	  Please check which statement below best represents the level of dental health you wish to achieve</p>
+	  <%= f.input :health_level1, :label=>false, :collection => %w{Health\ Level\ 1\ -\ Emergency\ Care}, :as=>:radio%>
+
+
+</fieldset>

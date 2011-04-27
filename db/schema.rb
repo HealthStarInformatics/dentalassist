@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110409194005) do
+ActiveRecord::Schema.define(:version => 20110427023437) do
 
   create_table "forms", :force => true do |t|
     t.string   "fname"
@@ -67,6 +67,54 @@ ActiveRecord::Schema.define(:version => 20110409194005) do
     t.string   "spouse_work_phone"
     t.string   "cell_phone"
     t.string   "email"
+    t.string   "spouse_name_2"
+    t.datetime "spouse_dob_2"
+    t.string   "spouse_empl"
+    t.string   "spouse_workph"
+    t.string   "primary_name"
+    t.string   "primary_phone"
+    t.string   "primary_group"
+    t.string   "primary_insured_name"
+    t.datetime "primary_insured_dob"
+    t.string   "primary_relation"
+    t.string   "primary_ssn"
+    t.string   "primary_employer"
+    t.string   "secondary_name"
+    t.string   "secondary_phone"
+    t.string   "secondary_group"
+    t.string   "secondary_insured_name"
+    t.datetime "secondary_insured_dob"
+    t.string   "secondary_relation"
+    t.string   "secondary_ssn"
+    t.string   "secondary_employer"
+    t.string   "physician_name"
+    t.string   "physician_phone"
+    t.string   "medical_conditions"
+    t.boolean  "other"
+    t.string   "other_yes"
+    t.boolean  "physicial_care"
+    t.string   "physicial_yes"
+    t.boolean  "hospital_admitted"
+    t.string   "hospital_yes"
+    t.boolean  "medications"
+    t.string   "medications_yes"
+    t.boolean  "allergic"
+    t.string   "allergic_yes"
+    t.boolean  "tobacco"
+    t.string   "tobacco_yes"
+    t.string   "for_women"
+    t.string   "women"
+    t.string   "x_rays"
+    t.string   "feal_dentist"
+    t.string   "mouth_teeth"
+    t.string   "teeth_appearance"
+    t.string   "state_of_health"
+    t.string   "main_concerns"
+    t.string   "enhance_smile"
+    t.string   "health_level1"
+    t.string   "health_level2"
+    t.string   "health_level3"
+    t.string   "health_level4"
   end
 
   create_table "states", :force => true do |t|

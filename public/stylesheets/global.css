@@ -4,7 +4,7 @@ Code licensed under the BSD License:
 http://developer.yahoo.com/yui/license.html
 version: 2.8.1
 */
-html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
 
 
 /*
@@ -32,8 +32,8 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
  */
 
 @font-face {
-	font-family: 'EksjaBold';
-	src: url('../fonts/eksja_bold_macroman/Eksja-bold-webfont.eot');
+/*	font-family: 'EksjaBold';
+	src: url('../fonts/eksja_bold_macroman/Eksja-bold-webfont.eot');*/
 	src: local('â˜º'), url('../fonts/eksja_bold_macroman/Eksja-bold-webfont.woff') format('woff'), url('../fonts/eksja_bold_macroman/Eksja-bold-webfont.ttf') format('truetype'), url('../fonts/eksja_bold_macroman/Eksja-bold-webfont.svg#webfont') format('svg');
 	font-weight: normal;
 	font-style: normal;
@@ -43,18 +43,19 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 /* AppSumo */
 
 body {
-    margin: 0;
-    padding: 0;
-    background: #fff;
+    background: #EEEEEE;
     color: #333;
     font: normal 15px/23px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, 'San-serif', serif;
+	color:#272727;
+    margin:0;
+    padding:0;
+    width:100%;
 }
 a {
     color: #447d9b;
 }
 h1, h2, h3, h4, h5, h6,
-p, table, ul, dl, form {
-    margin-bottom: 20px;
+table, ul, dl, form {
 }
 ul {
     padding-left: 20px;
@@ -80,7 +81,6 @@ dl dt {
 .wrapped {
     height: inherit;
     width: 937px;
-    margin: 0 auto;
     position: relative;
 }
 
@@ -130,6 +130,7 @@ fieldset {
   margin-bottom: 10px; 
   -moz-border-radius: 8px 8px 8px 8px;
   -webkit-border-radius: 8px 8px 8px 8px;
+  padding: 10px;
 }
 fieldset p { margin-top: 0; }
 div.formRow { padding: 6px 0px 6px 150px; margin: 1px 0; position: relative; }
@@ -148,8 +149,6 @@ div.fTextInputRow input, div.fPasswordInputRow input {
 	padding: 1px 3px;
 }
 option { padding: 0 5px; }
-div.fPasswordInputRow input, div.fTextInputRow input, select, textarea { border: 1px solid #999; color: #666; background: #f9f9f9; }
-input:focus, select:focus, textarea:focus { border-color: #777; color: #333; background: #fff; }
 textarea {
 	padding: 5px;
 }

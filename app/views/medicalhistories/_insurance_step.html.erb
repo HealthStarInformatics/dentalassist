@@ -1,0 +1,24 @@
+	<fieldset>
+	  <legend>Primary Insurance</legend>
+			<%= f.input :primary_name, :label=>"Insurance Co. Name"%>	
+			<%= f.input :primary_phone, :label=>"Phone", :input_html=>{:id=>"ph1"}%>	
+			<%= f.input :primary_group, :label=>"Group/Policy"%>	
+			<%= f.input :primary_insured_name, :label => "Insured's Name"%>	
+			<%= f.input :primary_insured_dob, :label => "Insured's Birth date", :as=>:string, :input_html=>{:size=>7, :id => 'date1', :class=>"some"}%>	
+			<%= f.input :primary_relation, :label => "Relation"%>	
+			<%= f.input :primary_ssn, :label => "Insured's SS#"%>	
+			<%= f.input :primary_employer, :label => "Insured's Employer"%>	
+	</fieldset>
+
+
+	<fieldset>
+	  <legend>Secondary Insurance</legend>
+			<%= f.input :secondary_name, :label=>"Insurance Co. Name"%>	
+			<%= f.input :secondary_phone, :label=>"Phone", :input_html=>{:id=>"ph1"}%>	
+			<%= f.input :secondary_group, :label=>"Group/Policy"%>	
+			<%= f.input :secondary_insured_name, :label => "Insured's Name"%>	
+			<%= f.input :secondary_insured_dob, :label => "Insured's Birth date", :as=>:string, :input_html=>{:size=>7, :id => 'date1', :class=>"some"}%>	
+			<%= f.input :secondary_relation, :label => "Relation"%>	
+			<%= f.input :secondary_ssn, :label => "Insured's SS#"%>	
+			<%= f.input :secondary_employer, :label => "Insured's Employer"%>	
+	</fieldset>

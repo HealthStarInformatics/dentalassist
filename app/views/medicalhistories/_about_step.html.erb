@@ -1,0 +1,49 @@
+<div id="notice">Register me as I fill the form  <a href="#">Learn more</a></div>
+	<fieldset>
+	  <legend>About you</legend>
+			<%= f.input :fname, :label=>"Name", :required=>false, :input_html => {:title => "came here"}%>
+			<%= f.input :lastname, :label=>"Preferred Name"%></tr>
+		    <%= f.input :sex, :collection => %w{Male Female}, :as => :radio%>
+			<%= f.input :marital, :label=>"Marital", :collection => %w{Single Married Child Other}, :include_blank => false%>
+			<%= f.input :dob, :label=>"Birth Date", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'date', :size=>7, :class => "some"}%>
+			<%= f.input :age, :label=>"Age", :as => :string, :input_html => {:size => 1}, :input_html => {:id => 'age'}%>
+			<%= f.input :ssn, :label=>"SS#", :input_html => {:id => 'ssn'}%>
+			<%= f.input :address, :label => "Home Address",  :input_html => {:size => 32}%>	
+			<%= f.input :city, :label => "City",  :input_html => {:size => 10}%>	
+			<%= f.input :state, :label => "State",  :collection => State::NAMES, :include_blank => false%>	
+			<%= f.input :zip, :label => "Zip",  :input_html => {:size => 4, :id => 'zip'}%>	
+			<%= f.input :home_phone,  :input_html => {:id => 'phone'}%>	
+			<%= f.input :biss_phone, :label => "Work Phone" ,  :input_html => {:id => 'phoneExt'}%>
+			<%= f.input :pager , :input_html => {:id => 'pager'}%>	
+			<%= f.input :cell_phone,  :input_html => {:id => 'cellphone'}%>	
+			<%= f.input :email%>
+			<%= f.input :emp, :label => "Employer"%>	
+			<%= f.input :emp_term, :label => "How long there?" %>
+			<%= f.input :occupation %>	
+			<%= f.input :emp_address, :label => "Employer Address",  :input_html => {:size => 32}%>	
+			<%= f.input :emp_city, :label => "City",  :input_html => {:size => 10}%>
+			<%= f.input :emp_state, :label => "State",  :collection => State::NAMES, :include_blank => false%>	
+			<%= f.input :emp_zip, :label => "Zip",  :input_html => {:size => 4, :id => 'zipo'}%>	
+		</table>
+			</fieldset>
+
+	  <fieldset>
+			<legend>Person Responsible for account</legend>
+			<%= f.input :resp_name, :label=>"Name", :required=>false, :input_html => {:title => 'Must be something'}%>
+			<%= f.input :resp_dob, :label=>"Birth Date", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'date', :size=>7}%>
+			<%= f.input :resp_relation, :label=>"Relation", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'date', :size=>7}%>
+			<%= f.input :resp_add, :label=>"Billing Address", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'date', :size=>7}%>
+			<%= f.input :resp_city, :label=>"City", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'date', :size=>7}%>
+			<%= f.input :resp_state, :label => "State",  :collection => State::NAMES, :include_blank => false%>	
+			<%= f.input :resp_zip, :label => "Zip",  :input_html => {:size => 4, :id => 'zipo'}%>	
+	  </fieldset>
+
+	  <fieldset>
+			<legend>Spouse Information</legend>
+			<%= f.input :spouse_name_2, :label=>"Name"%>
+			<%= f.input :spouse_dob_2, :label=>"Birth Date", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'date', :size=>7}%>
+			<%= f.input :spouse_empl, :label => "Employer"%>	
+			<%= f.input :spouse_workph, :label => "Work Phone"%>	
+		  
+	  </fieldset>
+

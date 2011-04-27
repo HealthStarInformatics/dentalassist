@@ -8,15 +8,31 @@ class MedicalhistoriesController < ApplicationController
   end
 
   def new
-    @medicalhistory = Medicalhistory.new
+	session[:medicalhistory_params] ||= {}
+	@medicalhistory = Medicalhistory.new(session[:medicalhistory_params])	
+	@medicalhistory.current_step = session[:form_step]
   end
 
   def create
-    @medicalhistory = Medicalhistory.new(params[:medicalhistory])
-    if @medicalhistory.save
-      redirect_to @medicalhistory, :notice => "Successfully submitted registration"
+    session[:medicalhistory_params].deep_merge!(params[:medicalhistory]) if params[:medicalhistory]
+    @medicalhistory= Medicalhistory.new(session[:medicalhistory_params])
+    @medicalhistory.current_step = session[:form_step]
+    if @medicalhistory.valid?
+      if params[:back_button]
+        @medicalhistory.previous_step
+      elsif @medicalhistory.last_step?
+        @medicalhistory.save if @medicalhistory.all_valid?
+      else
+        @medicalhistory.next_step
+      end
+      session[:form_step] = @medicalhistory.current_step
+    end
+    if @medicalhistory.new_record?
+      render "new"
     else
-      render :action => 'new'
+      session[:form_step] = session[:medicalhistory_params] = nil
+      flash[:notice] = "Form Saved!"
+      redirect_to @medicalhistory
     end
   end
 

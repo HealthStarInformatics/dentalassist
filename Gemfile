@@ -14,6 +14,5 @@ gem "rails3-generators"
 gem "pdfkit", '0.4.6'
 gem 'haml' 
 gem 'haml-rails' 
-gem 'compass', ">= 0.10.6" 
-gem 'fancy-buttons' 
 gem "jquery-rails"
+gem 'compass', ">= 0.10.6" 
