@@ -4,7 +4,7 @@ Code licensed under the BSD License:
 http://developer.yahoo.com/yui/license.html
 version: 2.8.1
 */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
 
 
 /*
@@ -54,13 +54,24 @@ body {
 a {
     color: #447d9b;
 }
-h1, h2, h3, h4, h5, h6,
+
 table, ul, dl, form {
 }
-ul {
+#number {
     padding-left: 20px;
     list-style: disc;
+    list-style-type: decimal;	
+	margin-left: 20px;
+	margin-bottom: 10px;
 }
+#nonumber {
+    padding-left: 20px;
+	margin-bottom: 10px;
+    list-style: disc;
+    list-style-type: decimal;	
+	margin-left: 20px;
+}
+
 ul li { list-style: inherit; }
 dl { line-height: 1.4em; padding-left: 100px; position: relative;}
 dl dt {
@@ -144,7 +155,6 @@ div.noMarginRow { padding-left: 10px !important; }
 div.formRow ul.errorlist { padding: 5px 0 0 0; margin: 0; list-style-type: none; font-size: 0.8em; font-weight: bold; }
 div.fPasswordInputRow input, div.fTextInputRow input, div.fPasswordInputRow input, div.formRow div.fTextInputRow input, div.fPasswordInputRow input { width: 250px; }
 textarea { min-width: 360px; }
-input, select { vertical-align: middle; }
 div.fTextInputRow input, div.fPasswordInputRow input {
 	padding: 1px 3px;
 }

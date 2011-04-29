@@ -5,31 +5,39 @@
     <p class="line">* This condition may require antibiotic premedication for certain dental procedures</p>
 
 	<p id="question">Do you have any health problems that were not listed above or need further clarification?</p>
-	<%= f.input :other, :label=>false, :collection => %w{Yes No}, :as => :radio%><br>
+	<%= f.input :other, :label=>false, :collection => %w{Yes No}, :as => :radio%> 
 	<p id="explain">If yes, explain:</p> <%= f.input :other_yes, :label=>false, :input_html => {:size => 55}%>
 
 	<p id="question">Are you now under care of a physician?</p>
-	<%= f.input :physicial_care, :label=>false, :collection => %w{Yes No}, :as => :radio%><br>
+	<%= f.input :physicial_care, :label=>false, :collection => %w{Yes No}, :as => :radio%> 
 	<p id="explain">If yes, explain:</p> <%= f.input :physicial_yes, :label=>false, :input_html => {:size => 55}%>
 
 	<p id="question">Have you been admitted to a hospital or needed emergency care during the past two years?</p>
-	<%= f.input :hospital_admitted, :label=>false, :collection => %w{Yes No}, :as => :radio%><br>
+	<%= f.input :hospital_admitted, :label=>false, :collection => %w{Yes No}, :as => :radio%> 
 	<p id="explain">If yes, explain:</p> <%= f.input :hospital_yes, :label=>false, :input_html => {:size => 55}%>
 
 	<p id="question">Are you taking any medications or herbals?</p>
-	<%= f.input :medications, :label=>false, :collection => %w{Yes No}, :as => :radio%><br>
+	<%= f.input :medications, :label=>false, :collection => %w{Yes No}, :as => :radio%> 
 	<p id="explain">If yes, explain:</p> <%= f.input :medications_yes, :label=>false, :input_html => {:size => 55}%>
 
-	<p id="exception">Are you allergic to any medicaitons or substances?</p>
+	<p id="question">Are you allergic to any medicaitons or substances?</p>
 	<div style="float: left;">
-	<%= f.input :allergic, :label=>false, :collection => %w{Aspirin Penicillin Iodine Metal	Latex Other}, :as => :radio        ,:input_html => {:class => "conditions_radio"}%><br></div>
+	<%= f.input :allergic, :label=>false,:collection => %w{Aspirin Penicillin Iodine Metal	Latex Other}, :as => :radio%> </div>
 	<%= f.input :allergic_yes, :label=>false, :input_html => {:size => 15}%>
 
 	<p id="question">Have you used tobacco?</p>
-	<%= f.input :tobacco, :label=>false, :collection => %w{Yes No}, :as => :radio%><br>
+	<%= f.input :tobacco, :label=>false, :collection => %w{Yes No}, :as => :radio%> 
 	<p id="explain">If yes, explain:</p> <%= f.input :tobacco_yes, :label=>false, :input_html => {:size => 55}%>
 
-	<p id="question_women">Women</p></br>
-	<%= f.input :women, :label=>false, :collection => %w{Pregnant Trying Nursing Taking}, :as => :check_boxes%><br>
+	<p id="question">Women</p>
+<%= f.input :women, :collection => women_options, :as => :check_boxes, :label=>false%> 
 </fieldset>
+
+
 </fieldset>
+
+
+
+
+
+
