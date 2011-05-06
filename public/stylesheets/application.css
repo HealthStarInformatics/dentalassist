@@ -141,11 +141,12 @@ list-style:none outside none;
 
 
 .simple_form .error {
-  clear: left;
-  margin-left: 200px;
-  width: 20%;
+  width: auto;
   color: #D00;
-  display: block;
+  display: inline;
+  margin-left: 5px;
+  padding: 2px;
+  padding-left: 29px;
 } 
 #C_container {
   margin-top 1.25em;
@@ -292,6 +293,13 @@ padding-left: 10px;
   padding: 5px;
   background-color: #FFFFCC;
 }
+#answer {
+  margin-right: 20px;
+  margin-left: 10px;
+  width: 75%;
+  overflow: auto;
+  padding: 5px;
+}
 #question_women {
   float: left;
   margin-right: 25px;
@@ -317,6 +325,17 @@ label.form_label{
   width: 70px;
   text-align: left;
   margin: 2px 10px;
+}
+label.show_label{
+  display: inline-block;
+  font-weight: bold;
+  text-align: left;
+  margin: 2px 10px;
+  width: 200px;
+}
+p.show {
+  float: left;
+  width: 50%;
 }
 p.health_explain {
   background-color:#EEEEEE;

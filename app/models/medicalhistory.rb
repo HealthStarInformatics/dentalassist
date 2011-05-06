@@ -1,5 +1,4 @@
 class Medicalhistory < ActiveRecord::Base
-  attr_accessible :fname, :lastname, :sex, :marital, :dob, :age, :ssn, :address, :city, :state, :zip, :home_phone, :biss_phone, :cell_phone, :pager, :email, :emp, :emp_term, :occupation, :emp_address, :emp_city, :emp_zip, :emp_state, :emp_city, :medical_conditions
 
   attr_writer :current_step
   validates_presence_of :fname, :if => lambda { |o| o.current_step == "about" }

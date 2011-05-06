@@ -13,7 +13,7 @@
   $(function() {
         $.mask.definitions['~'] = "[+-]";
 		$("#age").mask("999");
-        $("#date").mask("99/99/9999",{completed:function(){alert("completed!");}});
+        $("#date").mask("99/99/9999");
         $("#phone").mask("(999) 999-9999");
         $("#pager").mask("(999) 999-9999");
         $("#cellphone").mask("(999) 999-9999");
@@ -45,6 +45,128 @@ $("#new_medicalform :input").tooltip({
 	// custom opacity setting
 	opacity: 0.7
 });
+
+    if ($('#same_above_relation').attr("checked")) {
+      $('#medicalhistory_spouse_name_2').val($('#medicalhistory_resp_name').val());
+      $('#medicalhistory_spouse_name_2').attr("disabled", "disabled");
+      $('#spouse_date').val($('#resp_date').val());
+      $('#spouse_empl').val($('#resp_empl').val());
+      $('#spouse_workph').val($('#resp_phoneExt').val());
+      $('#spouse_date').attr("disabled", "disabled");
+      $('#spouse_empl').attr("disabled", "disabled");
+      $('#spouse_workph').attr("disabled", "disabled");
+    }
+$('#same_above_relation').change(function () {
+    if ($(this).attr("checked")) {
+      $('#medicalhistory_spouse_name_2').val($('#medicalhistory_resp_name').val());
+      $('#medicalhistory_spouse_name_2').attr("disabled", "disabled");
+      $('#spouse_date').val($('#resp_date').val());
+      $('#spouse_empl').val($('#resp_empl').val());
+      $('#spouse_workph').val($('#resp_phoneExt').val());
+      $('#spouse_date').attr("disabled", "disabled");
+      $('#spouse_empl').attr("disabled", "disabled");
+      $('#spouse_workph').attr("disabled", "disabled");
+      
+      return;
+    }
+      $('#medicalhistory_spouse_name_2').removeAttr("disabled");
+      $('#spouse_workph').removeAttr("disabled");
+      $('#spouse_date').removeAttr("disabled");
+      $('#spouse_empl').removeAttr("disabled");
+      $('#medicalhistory_spouse_name_2').val("");
+      $('#spouse_date').val("");
+      $('#spouse_empl').val("");
+      $('#spouse_workph').val("");
+});
+
+    if ($('#same_above_person').attr("checked")) {
+		$('#medicalhistory_resp_name').val($('#medicalhistory_fname').val());
+		$('#medicalhistory_resp_name').attr("disabled", "disabled");
+		$('#resp_date').val($('#date').val())
+		$('#resp_date').attr("disabled", "disabled");
+    $('#resp_address').val($('#medicalhistory_address').val());
+    $('#resp_address').attr("disabled", "disabled");
+    $('#resp_city').val($('#medicalhistory_city').val());
+    $('#resp_city').attr("disabled", "disabled");
+    $('#resp_state').val($('#medicalhistory_state').val());
+    $('#resp_state').attr("disabled", "disabled");
+    $('#resp_zipo').val($('#zip').val());
+    $('#resp_zipo').attr("disabled", "disabled");
+    $('#resp_phone').val($('#phone').val());
+    $('#resp_phone').attr("disabled", "disabled");
+    $('#resp_phoneExt').val($('#phoneExt').val());
+    $('#resp_phoneExt').attr("disabled", "disabled");
+    $('#resp_ssn').val($('#ssn').val());
+    $('#resp_ssn').attr("disabled", "disabled");
+    $('#resp_empl').val($('#medicalhistory_emp').val());
+    $('#resp_empl').attr("disabled", "disabled");
+    $('#resp_term').val($('#medicalhistory_emp_term').val());
+    $('#resp_term').attr("disabled", "disabled");
+    $('#resp_occupation').val($('#medicalhistory_occupation').val());
+    $('#resp_occupation').attr("disabled", "disabled");
+    $('#resp_relation').val("N/A");
+    $('#resp_relation').attr("disabled","disabled");
+    }
+
+//same as above
+$('#same_above_person').change(function () {
+    if ($(this).attr("checked")) {
+		$('#medicalhistory_resp_name').val($('#medicalhistory_fname').val());
+		$('#medicalhistory_resp_name').attr("disabled", "disabled");
+		$('#resp_date').val($('#date').val())
+		$('#resp_date').attr("disabled", "disabled");
+    $('#resp_address').val($('#medicalhistory_address').val());
+    $('#resp_address').attr("disabled", "disabled");
+    $('#resp_city').val($('#medicalhistory_city').val());
+    $('#resp_city').attr("disabled", "disabled");
+    $('#resp_state').val($('#medicalhistory_state').val());
+    $('#resp_state').attr("disabled", "disabled");
+    $('#resp_zipo').val($('#zip').val());
+    $('#resp_zipo').attr("disabled", "disabled");
+    $('#resp_phone').val($('#phone').val());
+    $('#resp_phone').attr("disabled", "disabled");
+    $('#resp_phoneExt').val($('#phoneExt').val());
+    $('#resp_phoneExt').attr("disabled", "disabled");
+    $('#resp_ssn').val($('#ssn').val());
+    $('#resp_ssn').attr("disabled", "disabled");
+    $('#resp_empl').val($('#medicalhistory_emp').val());
+    $('#resp_empl').attr("disabled", "disabled");
+    $('#resp_term').val($('#medicalhistory_emp_term').val());
+    $('#resp_term').attr("disabled", "disabled");
+    $('#resp_occupation').val($('#medicalhistory_occupation').val());
+    $('#resp_occupation').attr("disabled", "disabled");
+    $('#resp_relation').val("N/A");
+    $('#resp_relation').attr("disabled","disabled");
+        return;
+    }
+	//unchecked
+	  $('#medicalhistory_resp_name').val("");
+	  $('#medicalhistory_resp_name').removeAttr("disabled");
+	  $('#resp_date').val("");
+	  $('#resp_date').removeAttr("disabled");
+    $('#resp_address').val("");
+    $('#resp_address').removeAttr("disabled");
+    $('#resp_city').removeAttr("disabled");
+    $('#resp_state').removeAttr("disabled");
+    $('#resp_zipo').removeAttr("disabled");
+    $('#resp_phone').removeAttr("disabled");
+    $('#resp_phoneExt').removeAttr("disabled");
+    $('#resp_ssn').removeAttr("disabled");
+    $('#resp_term').removeAttr("disabled");
+    $('#resp_occupation').removeAttr("disabled");
+    $('#resp_relation').removeAttr("disabled");
+    $('#resp_empl').removeAttr("disabled");
+    $('#resp_city').val("");
+    $('#resp_state').val("");
+    $('#resp_zipo').val("");
+    $('#resp_phone').val("");
+    $('#resp_phoneExt').val("");
+    $('#resp_ssn').val("");
+    $('#resp_term').val("");
+    $('#resp_occupation').val("");
+    $('#resp_relation').val("");
+});
+
 
 
     });

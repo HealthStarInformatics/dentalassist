@@ -126,7 +126,7 @@ dl dt {
 	background: #D1FBCA url('../images/success.png') 10px center no-repeat;
 }
 .error, .warning {
-	background: #FBD5D2 url('../images/exclamation.png') 10px center no-repeat;
+	background:  url('../images/exclamation-red.png') 5px center no-repeat;
 	border-color: #E25F53;
 	color: #E25F53;
 }

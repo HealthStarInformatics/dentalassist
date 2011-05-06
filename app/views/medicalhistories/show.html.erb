@@ -1,87 +1,101 @@
 	<fieldset>
-	  <legend>ABOUT YOU</legend>
-			<div class="row">
-				<div class="data">
-				  <label>Name</label> <p><%=@medicalhistory.fname %></p>
-				</div>
-				<div class="data">
-				  <label class="large">Preferred Name</label> <p><%=@medicalhistory.lastname%></p>
-				</div>
-				<div class="data">
-				  <label>Sex</label> <p><%=@medicalhistory.sex%></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="data">
-				  <label>Marital</label> <p><%=@medicalhistory.marital%></p>
-				</div>
-				<div class="data">
-				  <label class="small">Birth Date</label> <p><%=@medicalhistory.dob%></p>
-				</div>
-				<div class="data">
-				  <label class="smaller">Age</label> <p><%=@medicalhistory.age%></p>
-				</div>
-				<div class="data">
-				  <label class="smaller">S.S#</label> <p><%=@medicalhistory.ssn%></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="data">
-				  <label class="large">Home Address</label> <p><%=@medicalhistory.address%></p>
-				</div>
-				<div class="data">
-				  <label class="smaller">City</label> <p><%=@medicalhistory.city%></p>
-				</div>
-				<div class="data">
-				  <label class="smaller">State</label> <p><%=@medicalhistory.state%></p>
-				</div>
-				<div class="data">
-				  <label class="smaller">Zip</label> <p><%=@medicalhistory.zip%></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="data">
-				  <label class="large">Home Phone</label> <p><%=@medicalhistory.home_phone%></p>
-				</div>
-				<div class="data">
-				  <label class="large">Work Phone</label> <p><%=@medicalhistory.biss_phone%></p>
-				</div>
-				<div class="data">
-				  <label>Pager</label> <p><%=@medicalhistory.pager%></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="data">
-				  <label class="large">Cell Phone</label> <p><%=@medicalhistory.cell_phone%></p>
-				</div>
-				<div class="data">
-				  <label class="large">Email</label> <p><%=@medicalhistory.email%></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="data">
-				  <label class="large">Employer</label> <p><%=@medicalhistory.emp%></p>
-				</div>
-				<div class="data">
-				  <label class="large">How long there?</label> <p><%=@medicalhistory.emp_term%></p>
-				</div>
-				<div class="data">
-				  <label>Occupation</label> <p><%=@medicalhistory.occupation%></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="data">
-				  <label class="large">Employee Address</label> <p><%=@medicalhistory.emp_address%></p>
-				</div>
-				<div class="data">
-				  <label class="smaller">City</label> <p><%=@medicalhistory.emp_city%></p>
-				</div>
-				<div class="data">
-				  <label class="smaller">State</label> <p><%=@medicalhistory.emp_state%></p>
-				</div>
-				<div class="data">
-				  <label class="smaller">Zip</label> <p><%=@medicalhistory.emp_zip%></p>
-				</div>
-			</div>
-		</legend>
-	  </fieldset>
+	  <legend>About you</legend>
+      <label class="show_label"> Name</label><%=@medicalhistory.fname%><div style="clear: both"/>
+      <label class="show_label"> Preferred Name</label><%=@medicalhistory.lastname%><div style="clear: both"/>
+      <label class="show_label"> Sex</label><%=@medicalhistory.sex%> <div style="clear: both"/>
+      <label class="show_label">Marital</label><%=@medicalhistory.marital%> <div style="clear: both"/>
+      <label class="show_label">Birth Date</label><%=@medicalhistory.dob%> <div style="clear: both"/>
+      <label class="show_label">Age</label><%=@medicalhistory.age%> <div style="clear: both"/>
+      <label class="show_label">SS#</label><%=@medicalhistory.ssn%> <div style="clear: both"/>
+      <label class="show_label">Home Address</label><%=@medicalhistory.address%> <div style="clear: both"/>
+      <label class="show_label">City</label><%=@medicalhistory.city%> <div style="clear: both"/>
+      <label class="show_label">State</label><%=@medicalhistory.state%> <div style="clear: both"/>
+      <label class="show_label">Zip</label><%=@medicalhistory.zip%> <div style="clear: both"/>
+      <label class="show_label">Home Phone</label><%=@medicalhistory.home_phone%> <div style="clear: both"/>
+      <label class="show_label">Work Phone</label><%=@medicalhistory.biss_phone%> <div style="clear: both"/>
+      <label class="show_label">Pager</label><%=@medicalhistory.pager%> <div style="clear: both"/>
+      <label class="show_label">Cell Phone</label><%=@medicalhistory.cell_phone%> <div style="clear: both"/>
+      <label class="show_label">Email</label><%=@medicalhistory.email%> <div style="clear: both"/>
+      <label class="show_label">Employer</label><%=@medicalhistory.emp%> <div style="clear: both"/>
+      <label class="show_label">How Long there</label><%=@medicalhistory.emp_term%> <div style="clear: both"/>
+      <label class="show_label">Occupation</label><%=@medicalhistory.occupation%> <div style="clear: both"/>
+      <label class="show_label">Employer Address</label><%=@medicalhistory.emp_address%> <div style="clear: both"/>
+      <label class="show_label">City</label><%=@medicalhistory.emp_city%> <div style="clear: both"/>
+      <label class="show_label">State</label><%=@medicalhistory.emp_state%> <div style="clear: both"/>
+      <label class="show_label">Zip</label><%=@medicalhistory.emp_zip%> 
+  </fieldset>
+
+  <fieldset>
+    <legend>Person Responsible for account</legend>
+    <label class="show_label">Name</label><%=@medicalhistory.resp_name%><div style="clear: both"/>
+    <label class="show_label">Birth Date</label><%=@medicalhistory.resp_dob%> <div style="clear: both"/>
+    <label class="show_label">Relation</label><%=@medicalhistory.resp_relation%> <div style="clear: both"/>
+    <label class="show_label">Billing Address</label><%=@medicalhistory.resp_add%> <div style="clear: both"/>
+    <label class="show_label">City</label><%=@medicalhistory.resp_city%> <div style="clear: both"/>
+    <label class="show_label">State</label><%=@medicalhistory.resp_state%> <div style="clear: both"/>
+    <label class="show_label">Zip</label><%=@medicalhistory.resp_zip%> <div style="clear: both"/>
+    <label class="show_label">Home Phone</label><%=@medicalhistory.resp_home_phone%> <div style="clear: both"/>
+    <label class="show_label">Work Phone</label><%=@medicalhistory.resp_work_phone%> <div style="clear: both"/>
+    <label class="show_label">SS#</label><%=@medicalhistory.resp_ssn%> <div style="clear: both"/>
+    <label class="show_label">Employer</label><%=@medicalhistory.resp_emp%> <div style="clear: both"/>
+    <label class="show_label">How long there?</label><%=@medicalhistory.resp_emp_term%> <div style="clear: both"/>
+    <label class="show_label">Occupation</label><%=@medicalhistory.resp_occupation%> 
+ </fieldset>
+  <fieldset >
+    <legend>Spouse Information</legend>
+     <label class="show_label">Name</label><%=@medicalhistory.spouse_name%> <div style="clear: both"/>
+     <label class="show_label">Birth Date</label><%=@medicalhistory.spouse_dob_2%> <div style="clear: both"/>
+     <label class="show_label">Employer</label><%=@medicalhistory.spouse_empl%> <div style="clear: both"/>
+     <label class="show_label">Work Phone</label><%=@medicalhistory.spouse_workph%> 
+  </fieldset>
+
+  <fieldset>
+    <legend>Primary Insurance</legend>
+      <label class="show_label">Insurance Co. Name</label><%=@medicalhistory.primary_name%><div style="clear: both"/>
+      <label class="show_label">Phone</label><%=@medicalhistory.primary_phone%><div style="clear: both"/>
+      <label class="show_label">Group/Policy</label><%=@medicalhistory.primary_group%><div style="clear: both"/>
+      <label class="show_label">Insured's Name</label><%=@medicalhistory.primary_insured_name%><div style="clear: both"/>
+      <label class="show_label">Insured's Birth date</label><%=@medicalhistory.primary_insured_dob%><div style="clear: both"/>
+      <label class="show_label">Relation</label><%=@medicalhistory.primary_relation%><div style="clear: both"/>
+      <label class="show_label">Insured's SS#</label><%=@medicalhistory.primary_ssn%><div style="clear: both"/>
+      <label class="show_label">Insured's Employer</label><%=@medicalhistory.primary_employer%>
+  </fieldset>
+
+  <fieldset>
+    <legend>Secondary Insurance</legend>
+      <label class="show_label">Insurance Co. Name</label><%=@medicalhistory.secondary_name%><div style="clear: both"/>
+      <label class="show_label">Phone</label><%=@medicalhistory.secondary_phone%><div style="clear: both"/>
+      <label class="show_label">Group/Policy</label><%=@medicalhistory.secondary_group%><div style="clear: both"/>
+      <label class="show_label">Insured's Name</label><%=@medicalhistory.secondary_insured_name%><div style="clear: both"/>
+      <label class="show_label">Insure's Birth date</label><%=@medicalhistory.secondary_insured_dob%><div style="clear: both"/>
+      <label class="show_label">Relation</label><%=@medicalhistory.secondary_relation%><div style="clear: both"/>
+      <label class="show_label">Insured's SS#</label><%=@medicalhistory.secondary_ssn%><div style="clear: both"/>
+      <label class="show_label">Insured's Employer</label><%=@medicalhistory.secondary_employer%>
+    </fieldset>
+
+    <fieldset>
+      <legend>Medical History</legend>
+        <label class="show_label">Physcians Name</label><%=@medicalhistory.physician_name%><div style="clear: both"/>
+        <label class="show_label">Medical Conditions</label><%=@medicalhistory.medical_conditions%><div style="clear: both"/>
+        <p id="question">Do you have any health problems that were not listed above or need further clarification?</p>
+        <p id="answer"><%= @medicalhistory.other%> <%= ": - " + @medicalhistory.other_yes unless @medicalhistory.other_yes.blank?%> </p>
+        
+        <p id="question">Are you now under care of a physician?</p>
+        <p id="answer"><%= @medicalhistory.physicial_care%> <%= ": - " +@medicalhistory.physicial_yes unless @medicalhistory.physicial_yes.blank?%></p>
+
+        <p id="question">Have you been admitted to a hospital or needed emergency care during the past two years?</p>
+        <p id="answer"><%= @medicalhistory.hospital_admitted%> <%= ": - " +@medicalhistory.hospital_yes unless @medicalhistory.hospital_yes.blank?%></p>
+
+
+	<p id="question">Are you taking any medications or herbals?</p>
+  <p id="answer"><%= @medicalhistory.medications%> <%= ": - " +@medicalhistory.medications_yes unless @medicalhistory.medications_yes.blank?%></p>
+
+	<p id="question">Are you allergic to any medicaitons or substances?</p>
+  <p id="answer"><%= @medicalhistory.allergic%> <%= ": - " + @medicalhistory.allergic_yes unless @medicalhistory.allergic_yes.blank?%></p>
+
+	<p id="question">Have you used tobacco?</p>
+  <p id="answer"><%= @medicalhistory.tobacco%> <%= ": - " + @medicalhistory.tobacco_yes unless @medicalhistory.tobacco_yes.blank?%></p>
+
+  <p id="question">Women</p>
+  <p id="answer"><%= @medicalhistory.women%></p>
+    </fieldset>

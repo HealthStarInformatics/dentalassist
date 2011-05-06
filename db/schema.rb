@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110427023437) do
+ActiveRecord::Schema.define(:version => 20110504223306) do
 
   create_table "forms", :force => true do |t|
     t.string   "fname"
@@ -90,17 +90,11 @@ ActiveRecord::Schema.define(:version => 20110427023437) do
     t.string   "physician_name"
     t.string   "physician_phone"
     t.string   "medical_conditions"
-    t.boolean  "other"
     t.string   "other_yes"
-    t.boolean  "physicial_care"
     t.string   "physicial_yes"
-    t.boolean  "hospital_admitted"
     t.string   "hospital_yes"
-    t.boolean  "medications"
     t.string   "medications_yes"
-    t.boolean  "allergic"
     t.string   "allergic_yes"
-    t.boolean  "tobacco"
     t.string   "tobacco_yes"
     t.string   "for_women"
     t.string   "women"
@@ -112,9 +106,14 @@ ActiveRecord::Schema.define(:version => 20110427023437) do
     t.string   "main_concerns"
     t.string   "enhance_smile"
     t.string   "health_level1"
-    t.string   "health_level2"
-    t.string   "health_level3"
-    t.string   "health_level4"
+    t.string   "same_above_personal"
+    t.string   "same_above_relation"
+    t.string   "tobacco"
+    t.string   "allergic"
+    t.string   "medications"
+    t.string   "hospital_admitted"
+    t.string   "physicial_care"
+    t.string   "other"
   end
 
   create_table "states", :force => true do |t|
