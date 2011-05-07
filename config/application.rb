@@ -40,7 +40,7 @@ module Dentalassistant
     config.filter_parameters += [:password]
 	  config.middleware.use  "PDFKit::Middleware", :print_media_type => true
     if ::Rails.env == 'production'
-      config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf-i386');
+      config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf-amd64');
     end
   end
 end
