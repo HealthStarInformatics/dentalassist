@@ -39,6 +39,7 @@ module Dentalassistant
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 	  config.middleware.use  "PDFKit::Middleware", :print_media_type => true
+    #test
     if ::Rails.env == 'production'
       config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf-amd64');
     end
