@@ -46,7 +46,7 @@ class MedicalhistoriesController < ApplicationController
       render "new"
     else
       session[:form_step] = session[:medicalhistory_params] = nil
-      flash[:notice] = "Form Saved!"
+      flash[:notice] = "New Patient Registration Complete!"
       redirect_to @medicalhistory
     end
   end
