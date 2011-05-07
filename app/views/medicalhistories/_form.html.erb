@@ -52,6 +52,7 @@
 					</div>
 				</div>
 </div>
+<%=f.error_messages%>
 	<%= render "#{@medicalhistory.current_step}_step", :f => f %>
 	<p><%= f.submit "Continue" %></p>
     <p><%= f.submit "Back", :name => "back_button" unless @medicalhistory.first_step? %></p>

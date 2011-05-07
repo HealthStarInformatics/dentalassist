@@ -8,10 +8,10 @@ class MedicalhistoriesController < ApplicationController
   end
 
   def new
-	session[:medicalhistory_params] = {}
-	@medicalhistory = Medicalhistory.new(session[:medicalhistory_params])	
-	#@medicalhistory.current_step = session[:form_step]
-	@medicalhistory.current_step = @medicalhistory.steps.first
+    session[:medicalhistory_params] = {}
+    @medicalhistory = Medicalhistory.new(session[:medicalhistory_params])	
+    #@medicalhistory.current_step = session[:form_step]
+    @medicalhistory.current_step = @medicalhistory.steps.first
   end
 
   def create
@@ -26,6 +26,7 @@ class MedicalhistoriesController < ApplicationController
         @medicalhistory.medical_conditions.each do |condition|
           selected_conditions.push(condition) unless condition.length <= 1
         end
+
         selected_women_conditions = []
         @medicalhistory.women.each do |women_condition|
           selected_women_conditions.push(women_condition) unless women_condition.length <= 1
@@ -38,6 +39,7 @@ class MedicalhistoriesController < ApplicationController
         @medicalhistory.save if @medicalhistory.all_valid?
       else
         @medicalhistory.next_step
+        print "test2" + @medicalhistory.dob.to_s
       end
       session[:form_step] = @medicalhistory.current_step
     end

@@ -1,0 +1,178 @@
+	<fieldset>
+	  <legend>About you</legend>
+    <table border="0">
+      <tr>
+        <td><label class="show_label"> Name</label></td>
+        <td><%=@medicalhistory.fname%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label"> Preferred Name</label></td>
+        <td><%=@medicalhistory.lastname%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label"> Sex</label></td>
+        <td><%=@medicalhistory.sex%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Marital</label></td>
+        <td><%=@medicalhistory.marital%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Birth Date</label></td>
+        <td><%=l @medicalhistory.dob%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Age</label></td>
+        <td><%=@medicalhistory.age%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">SS#</label></td>
+        <td><%=@medicalhistory.ssn%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Home Address</label></td>
+        <td><%=@medicalhistory.address%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">City</label></td>
+        <td><%=@medicalhistory.city%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">State</label></td>
+        <td><%=@medicalhistory.state%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Zip</label></td>
+        <td><%=@medicalhistory.zip%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Home Phone</label></td>
+        <td><%=@medicalhistory.home_phone%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Work Phone</label></td>
+        <td><%=@medicalhistory.biss_phone%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Pager</label></td>
+        <td><%=@medicalhistory.pager%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Cell Phone</label></td>
+        <td><%=@medicalhistory.cell_phone%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Email</label></td>
+        <td><%=@medicalhistory.email%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Employer</label></td>
+        <td><%=@medicalhistory.emp%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">How Long there</label></td>
+        <td><%=@medicalhistory.emp_term%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Occupation</label></td>
+        <td><%=@medicalhistory.occupation%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Employer Address</label></td>
+        <td><%=@medicalhistory.emp_address%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">City</label></td>
+        <td><%=@medicalhistory.emp_city%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">State</label></td>
+        <td><%=@medicalhistory.emp_state%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Zip</label></td>
+        <td><%=@medicalhistory.emp_zip%> </td>
+      </tr>
+      </table>
+  </fieldset>
+  <fieldset>
+    <legend>Person Responsible for account</legend>
+    <input type="checkbox" <%= "checked" unless @medicalhistory.same_above_personal.blank? %>>&nbsp;&nbsp;Same as above
+    <table border="0">
+      <tr>
+        <td><label class="show_label">Name</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.fname%><%else%><%=@medicalhistory.resp_name%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Birth Date</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.dob%><%else%><%=@medicalhistory.resp_dob%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Relation</label></td>
+<td><%if !(@medicalhistory.same_above_personal.blank?)%> N/A <%else%><%=@medicalhistory.resp_relation%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Billing Address</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.address%><%else%><%=@medicalhistory.resp_add%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">City</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.city%><%else%><%=@medicalhistory.resp_city%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">State</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.state%><%else%><%=@medicalhistory.resp_state%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Zip</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.zip%><%else%><%=@medicalhistory.resp_zip%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Home Phone</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.home_phone%><%else%><%=@medicalhistory.resp_home_phone%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Work Phone</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.biss_phone%><%else%><%=@medicalhistory.resp_work_phone%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">SS#</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.ssn%><%else%><%=@medicalhistory.resp_ssn%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Employer</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.emp%><%else%><%=@medicalhistory.resp_emp%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">How long there?</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.emp_term%><%else%><%=@medicalhistory.resp_emp_term%><%end%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Occupation</label></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.occupation%><%else%><%=@medicalhistory.resp_occupation%><%end%></td>
+      </tr>
+    </table>
+ </fieldset>
+
+  <fieldset >
+    <legend>Spouse Information</legend>
+    <input type="checkbox" <%= "checked" unless @medicalhistory.same_above_relation.blank? %>>&nbsp;&nbsp;Same as above
+      <table>
+        <tr>
+          <td><label class="show_label">Name</label></td>
+          <td><%if !(@medicalhistory.same_above_relation.blank?)%><%=@medicalhistory.resp_name%><%else%><%=@medicalhistory.spouse_name%><%end%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Birth Date</label></td>
+          <td><%if !(@medicalhistory.same_above_relation.blank?)%><%=@medicalhistory.resp_dob%><%else%><%=@medicalhistory.spouse_dob_2%><%end%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Employer</label></td>
+          <td><%if !(@medicalhistory.same_above_relation.blank?)%><%=@medicalhistory.resp_emp%><%else%><%=@medicalhistory.spouse_empl%><%end%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Work Phone</label></td>
+          <td><%if !(@medicalhistory.same_above_relation.blank?)%><%=@medicalhistory.resp_work_phone%><%else%><%=@medicalhistory.spouse_workph%><%end%></td>
+        </tr>
+      </table>
+  </fieldset>

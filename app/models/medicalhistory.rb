@@ -1,8 +1,8 @@
 class Medicalhistory < ActiveRecord::Base
 
   attr_writer :current_step
-  validates_presence_of :fname, :if => lambda { |o| o.current_step == "about" }
-  validates_presence_of :resp_name, :if => lambda { |o| o.current_step == "" }
+  validates_presence_of :fname, :dob,:resp_dob, :if => lambda { |o| o.current_step == "about" }
+  validates_presence_of :primary_insured_dob, :if => lambda { |o| o.current_step == "insurance" }
 
 def current_step
   @current_step ||  steps.first

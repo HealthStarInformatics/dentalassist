@@ -1,0 +1,34 @@
+    <fieldset>
+      <legend>Medical History</legend>
+        <table>
+          <tr>
+            <td><label class="show_label">Physcians Name</label></td>
+            <td><%=@medicalhistory.physician_name%></td>
+          </tr>
+          <tr>
+            <td><label class="show_label">Medical Conditions</label></td>
+            <td><%=@medicalhistory.medical_conditions%></td>
+          </tr>
+        </table>
+        <p id="question">Do you have any health problems that were not listed above or need further clarification?</p>
+        <p id="answer"><%= @medicalhistory.other%> <%= ": - " + @medicalhistory.other_yes unless @medicalhistory.other_yes.blank?%> </p>
+        
+        <p id="question">Are you now under care of a physician?</p>
+        <p id="answer"><%= @medicalhistory.physicial_care%> <%= ": - " +@medicalhistory.physicial_yes unless @medicalhistory.physicial_yes.blank?%></p>
+
+        <p id="question">Have you been admitted to a hospital or needed emergency care during the past two years?</p>
+        <p id="answer"><%= @medicalhistory.hospital_admitted%> <%= ": - " +@medicalhistory.hospital_yes unless @medicalhistory.hospital_yes.blank?%></p>
+
+
+	<p id="question">Are you taking any medications or herbals?</p>
+  <p id="answer"><%= @medicalhistory.medications%> <%= ": - " +@medicalhistory.medications_yes unless @medicalhistory.medications_yes.blank?%></p>
+
+	<p id="question">Are you allergic to any medicaitons or substances?</p>
+  <p id="answer"><%= @medicalhistory.allergic%> <%= ": - " + @medicalhistory.allergic_yes unless @medicalhistory.allergic_yes.blank?%></p>
+
+	<p id="question">Have you used tobacco?</p>
+  <p id="answer"><%= @medicalhistory.tobacco%> <%= ": - " + @medicalhistory.tobacco_yes unless @medicalhistory.tobacco_yes.blank?%></p>
+
+  <p id="question">Women</p>
+  <p id="answer"><%= @medicalhistory.women%></p>
+    </fieldset>

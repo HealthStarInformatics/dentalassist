@@ -1,0 +1,36 @@
+
+<fieldset>
+  <legend>Dental Health Questionnaire</legend>
+	<p class="line_health_color">
+     We believe that each patient deserves to know what their current level of dental health is, how they got there, and what treatment options are available to help them reach the level of health that they deserve. This begins with a careful diagnosis and personalized treatment plan. We will perform a comprehensive oral examination of your teeth, gums, jaw joints, bite and soft tissues. We will also take the appropriate x-rays, and when beneficial we may take additional diagnostic records such as photographs or casts of your teeth to further evaluate areas of concern.
+Once all your records have been completed they will be carefully evaluated to determine your current level of dental health and how you got there. We will review our findings with you and discuss your treatment options. A personalized treatment plan will then be developed to help you achieve the goals we set together.
+	</p>
+    </br></br>
+	<p class="line_health">Please help us better understand your dental health	needs and goals by answering the following questions:</p>
+
+	<p id="question">Have you had a full mouth set of x-rays (other than routine cavity detecting x-rays) within the last 3 years</p>
+  <p id="answer"><%= @medicalhistory.x_rays%></p>
+
+	<p id="question">Feal of going to the dentist</p>
+  <p id="answer"><%= @medicalhistory.feal_dentist%></p>
+
+	<p id="question">My mouth and teeth are</p>
+  <p id="answer"><%= @medicalhistory.mouth_teeth%></p>
+
+	<p id="question">Appearance of my teeth</p>
+  <p id="answer"><%= @medicalhistory.teeth_appearance%></p>
+
+	<p id="question">I think my present state of dental health is </p>
+  <p id="answer"><%= @medicalhistory.state_of_health%></p>
+
+	<p id="question">I would say that my main concerns with my dental health are</p>
+  <p id="answer"><%= @medicalhistory.main_concerns%></p>
+
+	<p id="question">I am interested in a smile evaluation and personalized treatment plan to enhance my smile</p>
+  <p id="answer"><%= @medicalhistory.enhance_smile %></p>
+
+	<p class="line_health_after">Please check which statement below best represents the level of dental health you wish to achieve</p>
+    <p id="answer"><%= @medicalhistory.health_level1%>
+
+
+</fieldset>

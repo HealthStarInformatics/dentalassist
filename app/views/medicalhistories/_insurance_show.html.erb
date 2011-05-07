@@ -1,0 +1,75 @@
+  <fieldset>
+    <legend>Primary Insurance</legend>
+    <table>
+      <tr>
+        <td><label class="show_label">Insurance Co. Name</label></td>
+        <td><%=@medicalhistory.primary_name%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Phone</label></td>
+        <td><%=@medicalhistory.primary_phone%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Group/Policy</label></td>
+        <td><%=@medicalhistory.primary_group%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Insured's Name</label></td>
+        <td><%=@medicalhistory.primary_insured_name%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Insured's Birth date</label></td>
+        <td><%= l @medicalhistory.primary_insured_dob%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Relation</label></td>
+        <td><%=@medicalhistory.primary_relation%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Insured's SS#</label></td>
+        <td><%=@medicalhistory.primary_ssn%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label">Insured's Employer</label></td>
+        <td><%=@medicalhistory.primary_employer%></td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend>Secondary Insurance</legend>
+      <table>
+        <tr>
+          <td><label class="show_label">Insurance Co. Name</label></td>
+          <td><%=@medicalhistory.secondary_name%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Phone</label></td>
+          <td><%=@medicalhistory.secondary_phone%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Group/Policy</label></td>
+          <td><%=@medicalhistory.secondary_group%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Insured's Name</label></td>
+          <td><%=@medicalhistory.secondary_insured_name%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Insure's Birth date</label></td>
+          <td><%=@medicalhistory.secondary_insured_dob%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Relation</label></td>
+          <td><%=@medicalhistory.secondary_relation%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Insured's SS#</label></td>
+          <td><%=@medicalhistory.secondary_ssn%></td>
+        </tr>
+        <tr>
+          <td><label class="show_label">Insured's Employer</label></td>
+          <td><%=@medicalhistory.secondary_employer%></td>
+        </tr>
+      </table>
+    </fieldset>
