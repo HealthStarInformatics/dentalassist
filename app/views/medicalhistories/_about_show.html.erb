@@ -19,7 +19,7 @@
       </tr>
       <tr>
         <td><label class="show_label">Birth Date</label></td>
-        <td><%=l @medicalhistory.dob%></td>
+        <td><%=l @medicalhistory.dob unless !@medicalhistory.dob.blank?%></td>
       </tr>
       <tr>
         <td><label class="show_label">Age</label></td>
@@ -105,7 +105,7 @@
       </tr>
       <tr>
         <td><label class="show_label">Birth Date</label></td>
-        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.dob%><%else%><%=@medicalhistory.resp_dob%><%end%></td>
+        <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.dob unless !@medicalhistory.dob.blank?%><%else%><%=@medicalhistory.resp_dob unless !@medicalhistory.resp_dob.blank?%><%end%></td>
       </tr>
       <tr>
         <td><label class="show_label">Relation</label></td>
@@ -164,7 +164,7 @@
         </tr>
         <tr>
           <td><label class="show_label">Birth Date</label></td>
-          <td><%if !(@medicalhistory.same_above_relation.blank?)%><%=@medicalhistory.resp_dob%><%else%><%=@medicalhistory.spouse_dob_2%><%end%></td>
+          <td><%if !(@medicalhistory.same_above_relation.blank?)%><%=@medicalhistory.resp_dob unless @medicalhistory.resp_dob.blank?%><%else%><%=@medicalhistory.spouse_dob_2 unless @medicalhisotyr.spouse_dob_2.blank?%><%end%></td>
         </tr>
         <tr>
           <td><label class="show_label">Employer</label></td>
