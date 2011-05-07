@@ -522,6 +522,7 @@ legend {
 
 
 @media print {
+      #C_header {display: none;}
 		  #deal-header { display: none;}
 		  #navigation-list {display: none;}
 		  #navigation{display:none;}
