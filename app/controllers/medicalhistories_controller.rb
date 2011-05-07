@@ -26,16 +26,15 @@ class MedicalhistoriesController < ApplicationController
         @medicalhistory.medical_conditions.each do |condition|
           selected_conditions.push(condition) unless condition.length <= 1
         end
-
+        print @medicalhistory.women.size
         selected_women_conditions = []
         @medicalhistory.women.each do |women_condition|
           selected_women_conditions.push(women_condition) unless women_condition.length <= 1
         end
         selected_women_conditions = selected_women_conditions.join(",")
         selected_conditions = selected_conditions.join(",")
-        print "selected!!!!" 
-        print selected_conditions 
         @medicalhistory.medical_conditions = selected_conditions
+        @medicalhistory.women = selected_women_conditions
         @medicalhistory.save if @medicalhistory.all_valid?
       else
         @medicalhistory.next_step

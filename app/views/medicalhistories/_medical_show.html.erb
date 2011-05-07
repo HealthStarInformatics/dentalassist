@@ -7,7 +7,7 @@
           </tr>
           <tr>
             <td><label class="show_label">Medical Conditions</label></td>
-            <td><%=@medicalhistory.medical_conditions%></td>
+            <td><%=@medicalhistory.medical_conditions%> <%= "None" unless !@medicalhistory.medical_conditions.blank?%></td>
           </tr>
         </table>
         <p id="question">Do you have any health problems that were not listed above or need further clarification?</p>

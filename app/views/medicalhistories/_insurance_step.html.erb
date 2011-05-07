@@ -6,7 +6,7 @@
 			<%= f.input :primary_insured_name, :label => "Insured's Name",:label_html => {:class => "form_label"}%>	
 			<%= f.input :primary_insured_dob, :label => "Insured's Birth date", :required=>true,:as=>:string, :input_html=>{:size=>10, :id => 'date1', :class=>"some"},:label_html => {:class => "form_label"}%>	
 			<%= f.input :primary_relation, :label => "Relation",:label_html => {:class => "form_label"}%>	
-			<%= f.input :primary_ssn, :label => "Insured's SS#",:label_html => {:class => "form_label"}%>	
+			<%= f.input :primary_ssn, :label => "Insured's SS#",:label_html => {:class => "form_label"}, :input_html => {:id => "insuredssn"}%>	
 			<%= f.input :primary_employer, :label => "Insured's Employer",:label_html => {:class => "form_label"}%>	
 	</fieldset>
 
