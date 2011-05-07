@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= css3buttons_stylesheets %>
     <%= stylesheet_link_tag "application", :media => 'all'%>
     <%= stylesheet_link_tag "button-basics", :media => 'all'%>
     <%= stylesheet_link_tag "global" %>

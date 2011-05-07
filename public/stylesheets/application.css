@@ -161,9 +161,11 @@ list-style:none outside none;
 }
 
 
+
+
 .simple_form .error {
   width: auto;
-  color: #D00;
+  color: #FFFFFF;
   display: inline;
   margin-left: 5px;
   padding: 2px;
