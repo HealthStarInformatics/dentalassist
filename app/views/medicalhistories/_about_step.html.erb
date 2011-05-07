@@ -30,7 +30,7 @@
 		    <legend>Person Responsible for account</legend>
         <input type="checkbox" name="medicalhistory[same_above_personal][]" value="same as above" id="same_above_person" <%if (@medicalhistory.same_above_personal) != nil%> checked <%end%>>Same as above
         <%= f.input :resp_name, :label=>"Name", :required=>false, :input_html => {:title => 'Must be something'},:label_html => {:class => "form_label"}%>
-			<%= f.input :resp_dob, :label=>"Birth Date", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'resp_date', :size=>7},:label_html => {:class => "form_label"}, :required => false%>
+			<%= f.input :resp_dob, :label=>"Birth Date", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'resp_date', :size=>7},:label_html => {:class => "form_label"}%>
 			<%= f.input :resp_relation, :label=>"Relation", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'resp_relation', :size=>7},:label_html => {:class => "form_label"}%>
 			<%= f.input :resp_add, :label=>"Billing Address", :as => :string, :input_html => {:size => 32}, :input_html => {:id => 'resp_address'},:label_html => {:class => "form_label"}%>
 			<%= f.input :resp_city, :label=>"City", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'resp_city', :size=>7},:label_html => {:class => "form_label"}%>

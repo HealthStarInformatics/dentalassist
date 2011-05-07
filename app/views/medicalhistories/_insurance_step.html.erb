@@ -4,7 +4,7 @@
 			<%= f.input :primary_phone, :label=>"Phone", :input_html=>{:id=>"ph1"},:label_html => {:class => "form_label"}%>	
 			<%= f.input :primary_group, :label=>"Group/Policy",:label_html => {:class => "form_label"}%>	
 			<%= f.input :primary_insured_name, :label => "Insured's Name",:label_html => {:class => "form_label"}%>	
-			<%= f.input :primary_insured_dob, :label => "Insured's Birth date", :required=>true,:as=>:string, :input_html=>{:size=>7, :id => 'date1', :class=>"some"},:label_html => {:class => "form_label"}%>	
+			<%= f.input :primary_insured_dob, :label => "Insured's Birth date", :required=>true,:as=>:string, :input_html=>{:size=>10, :id => 'date1', :class=>"some"},:label_html => {:class => "form_label"}%>	
 			<%= f.input :primary_relation, :label => "Relation",:label_html => {:class => "form_label"}%>	
 			<%= f.input :primary_ssn, :label => "Insured's SS#",:label_html => {:class => "form_label"}%>	
 			<%= f.input :primary_employer, :label => "Insured's Employer",:label_html => {:class => "form_label"}%>	
@@ -17,7 +17,7 @@
 			<%= f.input :secondary_phone, :label=>"Phone", :input_html=>{:id=>"ph1"},:label_html => {:class => "form_label"}%>	
 			<%= f.input :secondary_group, :label=>"Group/Policy",:label_html => {:class => "form_label"}%>	
 			<%= f.input :secondary_insured_name, :label => "Insured's Name",:label_html => {:class => "form_label"}%>	
-			<%= f.input :secondary_insured_dob, :label => "Insured's Birth date", :as=>:string, :input_html=>{:size=>7, :id => 'date1', :class=>"some"},:label_html => {:class => "form_label"}%>	
+			<%= f.input :secondary_insured_dob, :label => "Insured's Birth date", :as=>:string, :input_html=>{:size=>7, :id => 'date2', :class=>"some"},:label_html => {:class => "form_label"}%>	
 			<%= f.input :secondary_relation, :label => "Relation",:label_html => {:class => "form_label"}%>	
 			<%= f.input :secondary_ssn, :label => "Insured's SS#",:label_html => {:class => "form_label"}%>	
 			<%= f.input :secondary_employer, :label => "Insured's Employer",:label_html => {:class => "form_label"}%>	

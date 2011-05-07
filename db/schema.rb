@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110504223306) do
+ActiveRecord::Schema.define(:version => 20110507115150) do
 
   create_table "forms", :force => true do |t|
     t.string   "fname"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20110504223306) do
     t.string   "zip"
     t.string   "occupation"
     t.string   "ssn"
-    t.datetime "dob"
     t.string   "sex"
     t.string   "height"
     t.integer  "weight"
@@ -50,7 +49,6 @@ ActiveRecord::Schema.define(:version => 20110504223306) do
     t.string   "emp_state"
     t.string   "emp_zip"
     t.string   "resp_name"
-    t.date     "resp_dob"
     t.string   "resp_relation"
     t.string   "resp_add"
     t.string   "resp_city"
@@ -68,14 +66,12 @@ ActiveRecord::Schema.define(:version => 20110504223306) do
     t.string   "cell_phone"
     t.string   "email"
     t.string   "spouse_name_2"
-    t.datetime "spouse_dob_2"
     t.string   "spouse_empl"
     t.string   "spouse_workph"
     t.string   "primary_name"
     t.string   "primary_phone"
     t.string   "primary_group"
     t.string   "primary_insured_name"
-    t.datetime "primary_insured_dob"
     t.string   "primary_relation"
     t.string   "primary_ssn"
     t.string   "primary_employer"
@@ -83,7 +79,6 @@ ActiveRecord::Schema.define(:version => 20110504223306) do
     t.string   "secondary_phone"
     t.string   "secondary_group"
     t.string   "secondary_insured_name"
-    t.datetime "secondary_insured_dob"
     t.string   "secondary_relation"
     t.string   "secondary_ssn"
     t.string   "secondary_employer"
@@ -114,6 +109,11 @@ ActiveRecord::Schema.define(:version => 20110504223306) do
     t.string   "hospital_admitted"
     t.string   "physicial_care"
     t.string   "other"
+    t.string   "dob"
+    t.string   "resp_dob"
+    t.string   "spouse_dob_2"
+    t.string   "primary_insured_dob"
+    t.string   "secondary_insured_dob"
   end
 
   create_table "states", :force => true do |t|
