@@ -41,7 +41,6 @@ module Dentalassistant
 	  config.middleware.use  "PDFKit::Middleware", :print_media_type => true
     #test
     if ::Rails.env == 'production'
-      config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf-amd64');
     end
   end
 end
