@@ -42,6 +42,7 @@
     dateObj = new Date(parts[3], parts[2]-1, parts[1]);
     var age = getAge(dateObj);
          $("#age").val(age);
+         $("#age").attr("readonly", "readonly");
         }});
         $("#date1").mask("99/99/9999");
         $("#date2").mask("99/99/9999");

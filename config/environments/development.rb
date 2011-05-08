@@ -23,11 +23,7 @@ Dentalassistant::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
-  config.action_controller.asset_host = Proc.new do |request, source|
-    if request.include? '.pdf'
-     print "file://#{Rails.root.join('public')}" 
-    end
-  end
-
+  config.action_controller.asset_host = Proc.new { |source,request|
+  source.match(/pdf/) ? "file://#{Rails.root.join('public')}" : "#{request.protocol}#{request.host_with_port}"}
 end
 
