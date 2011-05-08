@@ -45,4 +45,7 @@ Dentalassistant::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  config.action_controller.asset_host = Proc.new { |source,request|
+    source.match(/pdf/) ? "file://#{Rails.root.join('public')}" : "#{request.protocol}#{request.host_with_port}"
+  }
 end

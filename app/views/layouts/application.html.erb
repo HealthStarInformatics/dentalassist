@@ -41,7 +41,7 @@
         $("#date").mask("99/99/9999",{completed:function(){
     var birthDateStr = this.val().replace(/\//g,"");
     parts = birthDateStr.match(/(\d{2})(\d{2})(\d{4})/);
-    dateObj = new Date(parts[3], parts[2]-1, parts[1]);
+    dateObj = new Date(parts[3], parts[1], parts[2]-1);
     var age = getAge(dateObj);
          $("#age").val(age);
          //$("#age").attr("readonly", "readonly");

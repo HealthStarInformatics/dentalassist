@@ -24,6 +24,8 @@ Dentalassistant::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   config.action_controller.asset_host = Proc.new { |source,request|
-  source.match(/pdf/) ? "file://#{Rails.root.join('public')}" : "#{request.protocol}#{request.host_with_port}"}
+   # print "This is request!!" + request.GET
+   # request.GET.to_s.match(/pdf/) ? "file://#{Rails.root.join('public')}" : "#{request.protocol}#{request.host_with_port}"
+  }
 end
 
