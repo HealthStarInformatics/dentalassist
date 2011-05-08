@@ -24,6 +24,9 @@ Dentalassistant::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   config.action_controller.asset_host = Proc.new do |request, source|
+    if request.include? '.pdf'
+     print "file://#{Rails.root.join('public')}" 
+    end
   end
 
 end
