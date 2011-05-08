@@ -12,10 +12,37 @@
 <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>	
 <script src="/javascripts/jquery.maskedinput.js" type="text/javascript"></script> 
    <script type="text/javascript">
+   function getAge(birthDate) {
+  var now = new Date();
+
+  function isLeap(year) {
+    return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+  }
+
+  // days since the birthdate    
+  var days = Math.floor((now.getTime() - birthDate.getTime())/1000/60/60/24);
+  var age = 0;
+  // iterate the years
+  for (var y = birthDate.getFullYear(); y <= now.getFullYear(); y++){
+    var daysInYear = isLeap(y) ? 366 : 365;
+    if (days >= daysInYear){
+      days -= daysInYear;
+      age++;
+      // increment the age only if there are available enough days for the year.
+    }
+  }
+  return age;
+}
   $(function() {
         $.mask.definitions['~'] = "[+-]";
         $("#age").mask("99");
-        $("#date").mask("99/99/9999");
+        $("#date").mask("99/99/9999",{completed:function(){
+    var birthDateStr = this.val().replace(/\//g,"");
+    parts = birthDateStr.match(/(\d{2})(\d{2})(\d{4})/);
+    dateObj = new Date(parts[3], parts[2]-1, parts[1]);
+    var age = getAge(dateObj);
+         $("#age").val(age);
+        }});
         $("#date1").mask("99/99/9999");
         $("#date2").mask("99/99/9999");
         $("#resp_date").mask("99/99/9999");
