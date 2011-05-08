@@ -5,6 +5,15 @@ class MedicalhistoriesController < ApplicationController
 
   def show
     @medicalhistory = Medicalhistory.find(params[:id])
+    respond_to do |format|
+      format.pdf {
+        html = render_to_string(:layout=>false, :action=>"show.html.erb")
+        kit = PDFKit.new(html)
+        kit.stylesheets << "#{Rails.root}/public/stylesheets/application.css" 
+        send_data(kit.to_pdf, :filename => "labels.pdf", :type => 'application/pdf')
+        return 
+      }
+    end
   end
 
   def new

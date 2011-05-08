@@ -4,7 +4,6 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= css3buttons_stylesheets %>
     <%= stylesheet_link_tag "application", :media => 'all'%>
-    <%= stylesheet_link_tag "button-basics", :media => 'all'%>
     <%= stylesheet_link_tag "global" %>
 	<%= javascript_include_tag :defaults, 'jquery.maskedinput.js' %>
 	<%= javascript_include_tag :defaults, 'formToWizard.js' %>
@@ -44,7 +43,6 @@
     dateObj = new Date(parts[3], parts[1], parts[2]-1);
     var age = getAge(dateObj);
          $("#age").val(age);
-         //$("#age").attr("readonly", "readonly");
         }});
         $("#date1").mask("99/99/9999");
         $("#date2").mask("99/99/9999");
