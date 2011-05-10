@@ -3,17 +3,24 @@ class MedicalhistoriesController < ApplicationController
     @medicalhistories = Medicalhistory.all
   end
 
+  def pdf
+    redirect_to "http://cricinfo.com"
+  end
+
   def show
     @medicalhistory = Medicalhistory.find(params[:id])
-    respond_to do |format|
-      format.pdf {
-        html = render_to_string(:layout=>false, :action=>"show.html.erb")
+      respond_to do |format| 
+        format.html # show.html.erb 
+        format.pdf {
+        html = render_to_string(:template => "medicalhistories/show.html.erb")
         kit = PDFKit.new(html)
-        kit.stylesheets << "#{Rails.root}/public/stylesheets/application.css" 
-        send_data(kit.to_pdf, :filename => "labels.pdf", :type => 'application/pdf')
-        return 
-      }
-    end
+        kit.stylesheets << "#{Rails.root}/public/stylesheets/pdf.css"
+        send_data(kit.to_pdf, :filename => "#{@medicalhistory.fname}.pdf",
+          :type => 'application/pdf', :disposition => 'inline')        
+        return
+    }
+
+      end
   end
 
   def new

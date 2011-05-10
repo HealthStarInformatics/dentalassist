@@ -1,12 +1,9 @@
 Dentalassistant::Application.routes.draw do
-
-
   match "login" => "user_sessions#new", :as => :login
   match "logout" => "user_sessions#destroy", :as => :logout
   resources :users
   resources :user_sessions
   resources :medicalhistories
-
   resources :forms
   root :to => 'medicalhistories#new'
 
