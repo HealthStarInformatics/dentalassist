@@ -1,4 +1,32 @@
 
+#question {
+  margin-right: 20px;
+  margin-left: 10px;
+  width: 75%;
+  overflow: auto;
+  padding: 5px;
+  background-color: #FFFFCC;
+}
+#answer {
+  margin-right: 20px;
+  margin-left: 10px;
+  width: 75%;
+  overflow: auto;
+  padding: 5px;
+}
+#question_women {
+  float: left;
+  margin-right: 25px;
+  margin-left: 10px;
+  width: 90%;
+  overflow: auto;
+}
+.line_health {
+  width: auto;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
 label.show_label{
   display: inline-block;
   font-weight: bold;
@@ -11,4 +39,62 @@ fieldset {
 }
 legend {
   font-weight: bold;
+}
+.line_health_color {
+  width: auto;
+  padding: 5px;
+  background-color: #EEEEEE;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.line_health_after {
+  width: auto;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  clear: both;
+  padding-top: 15px;
+  font-weight: bold;
+}
+p.health_explain {
+  background-color:#EEEEEE;
+  margin-left:25px;
+  padding:5px;
+  margin-bottom: 15px;
+}
+#notice_5 {
+  background-color: #EEEEEE;
+  margin-left: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+h3 {
+  background-color: #FFFFCC;
+}
+#notice_5_nobgc {
+  margin-left: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+#number {
+    padding-left: 20px;
+    list-style: disc;
+    list-style-type: decimal;	
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+#nonumber {
+    padding-left: 20px;
+	margin-bottom: 10px;
+    list-style: disc;
+    list-style-type: decimal;	
+	margin-left: 20px;
+}
+ol {
+  background-color: #FFFFCC;
+  padding: 10px;
+  list-style-type: none;
 }
