@@ -16,7 +16,7 @@ class MedicalhistoriesController < ApplicationController
         kit = PDFKit.new(html)
         kit.stylesheets << "#{Rails.root}/public/stylesheets/pdf.css"
         send_data(kit.to_pdf, :filename => "#{@medicalhistory.fname}.pdf",
-          :type => 'application/pdf', :disposition => 'inline')        
+          :type => 'application/pdf', :disposition => 'attachment')        
         return
     }
 
