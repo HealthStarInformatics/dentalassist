@@ -45,10 +45,27 @@
 	</ol>
   </div>
 
-  <div id="signatures">
-  </div>
 
   <h3>Notice of Privacy for Proctected Human Information</h3>
   <p id="notice_5_nobgc">I hereby acknowledge that I received a copy of this practice's Notice of Privacy Practices. I understand that I may ask any questions I might have regarding this notice</p>
 
+  <table id="signature">
+    <tr>
+      <td width="70%">
+      <%= f.input :signature, :required=>true, :label=>false%>
+      </td>
+      <td>
+      <%= f.input :signature_date, :required=>true, :label=>false%>
+      </td>
+    </tr>
+    <tr>
+    <td><p class="sig">Bhaarat Sharma</p></td>
+    <td><p class="sig"><%=Date.today.to_s%></p></td>
+    </tr>
+
+    </tr>
+  </table>
+  <div id="signatures">
+  </div>
+  <div style="clear:both"></div>
 </fieldset>

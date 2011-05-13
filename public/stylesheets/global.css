@@ -154,7 +154,6 @@ div.fCheckboxInputRow input { display: inline; }
 div.noMarginRow { padding-left: 10px !important; }
 div.formRow ul.errorlist { padding: 5px 0 0 0; margin: 0; list-style-type: none; font-size: 0.8em; font-weight: bold; }
 div.fPasswordInputRow input, div.fTextInputRow input, div.fPasswordInputRow input, div.formRow div.fTextInputRow input, div.fPasswordInputRow input { width: 250px; }
-textarea { min-width: 360px; }
 div.fTextInputRow input, div.fPasswordInputRow input {
 	padding: 1px 3px;
 }
@@ -182,7 +181,6 @@ div.fInputErrorRow, div.formRow ul.errorlist { color: red; }
 div.fErrors input, div.fErrors select, div.fErrors textarea { border-color: red; border-style: solid; }
 
 th { text-align: left; }
-th, td { padding: 5px; }
 
 #buy-page {
     padding: 0;

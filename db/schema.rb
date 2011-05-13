@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110507115150) do
+ActiveRecord::Schema.define(:version => 20110513030650) do
 
   create_table "forms", :force => true do |t|
     t.string   "fname"
@@ -114,6 +114,9 @@ ActiveRecord::Schema.define(:version => 20110507115150) do
     t.string   "spouse_dob_2"
     t.string   "primary_insured_dob"
     t.string   "secondary_insured_dob"
+    t.string   "signature"
+    t.string   "signature_date"
+    t.string   "pref_name"
   end
 
   create_table "states", :force => true do |t|

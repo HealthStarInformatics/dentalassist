@@ -10,26 +10,23 @@ Once all your records have been completed they will be carefully evaluated to de
 	<p id="question">Have you had a full mouth set of x-rays (other than routine cavity detecting x-rays) within the last 3 years</p>
 	<%= f.input :x_rays, :label=>false, :collection => %w{Yes No}, :as => :radio%>
 
-	<p id="question">Feal of going to the dentist</p>
+	<p id="question">Fear of going to the dentist</p>
 	<%= f.input :feal_dentist, :label=>false, :collection => %w{low mode high}, :as => :radio%>
 
 	<p id="question">My mouth and teeth are</p>
-	<%= f.input :mouth_teeth, :label=>false, :collection => %w{Very moderately Not\ comfortable}, :as => :radio%>
+  <%= f.input :mouth_teeth, :label=>false, :collection => %w{Very\ Cofortable Moderately\ Comfortable Not\ Comfortable}, :as => :radio%>
 
 	<p id="question">Appearance of my teeth</p>
-	<%= f.input :teeth_appearance, :label=>false, :collection => %w{Very\ satisfied Satisfied Disssatisfied }, :as => :radio%> 
+	<%= f.input :teeth_appearance, :label=>false, :collection => %w{I\ am\ Very\ Satisfied I\ am\ Satisfied I\ am\ Disssatisfied }, :as => :radio%> 
 
 	<p id="question">I think my present state of dental health is </p>
 	<%= f.input :state_of_health, :label=>false, :collection => %w{Excellent Good Fair Poor}, :as => :radio%>
 
 	<p id="question">I would say that my main concerns with my dental health are</p>
-	<%= f.input :main_concerns, :label=>false%>
+	<%= f.input :main_concerns, :label=>false, :as=>:text, :input_html=>{:cols => 50, :rows => 3}%>
 
 	<p id="question">I am interested in a smile evaluation and personalized treatment plan to enhance my smile</p>
 	<%= f.input :enhance_smile, :label=>false, :collection => %w{Yes No}, :as => :radio%> 
-
-	<p id="question">I am interested in a smile evaluation and personalized treatment plan to enhance my smile</p>
-    <%= f.input :enhance_smile, :label=>false, :collection => %w{Yes No}, :as => :radio%></br>
 
 	<p class="line_health_after">Please check which statement below best represents the level of dental health you wish to achieve</p>
 

@@ -1,13 +1,14 @@
 <div id="notice">Register me as I fill the form  <a href="#">Learn more</a></div>
 <fieldset>
 	  <legend>About you</legend>
-			<%= f.input :fname, :required => true, :label=>"Name", :input_html => {:title => "came here"},:label_html => {:class => "form_label"}%>
-			<%= f.input :lastname, :label=>"Preferred Name",:label_html => {:class => "form_label"}%></tr>
-		    <%= f.input :sex, :collection => %w{Male Female}, :as => :radio,:label_html => {:class => "form_label"}%>
+			<%= f.input :fname, :required => true, :label=>"First Name", :label_html => {:class => "form_label"}%>
+			<%= f.input :lastname, :required => true, :label=>"Last Name", :label_html => {:class => "form_label"}%>
+			<%= f.input :pref_name, :label=>"Preferred Name",:label_html => {:class => "form_label"}%></tr>
+		  <%= f.input :sex, :collection => %w{Male Female}, :as => :radio,:label_html => {:class => "form_label"}%>
 			<%= f.input :marital, :label=>"Marital", :collection => %w{Single Married Child Other}, :include_blank => false,:label_html => {:class => "form_label"}%>
-			<%= f.input :dob, :label=>"Birth Date", :as => :string, :input_html => {:size => 10}, :input_html => {:id => 'date', :class => "some"},:label_html => {:class => "form_label"}, :required=>true%>
+			<%= f.input :dob, :label=>"Birth Date (mm/dd/yyyy)", :as => :string, :input_html => {:size => 10}, :input_html => {:id => 'date', :class => "some"},:label_html => {:class => "form_label"}, :required=>true%>
 			<%= f.input :age, :label=>"Age", :as => :string, :input_html => {:size => 1}, :input_html => {:id => 'age'},:label_html => {:class => "form_label"}%>
-			<%= f.input :ssn, :label=>"SS#", :input_html => {:id => 'ssn'},:label_html => {:class => "form_label"}%>
+			<%= f.input :ssn, :label=>"SSN#", :input_html => {:id => 'ssn'},:label_html => {:class => "form_label"}%>
 			<%= f.input :address, :label => "Home Address",  :input_html => {:size => 32},:label_html => {:class => "form_label"}%>	
 			<%= f.input :city, :label => "City",  :input_html => {:size => 10},:label_html => {:class => "form_label"}%>	
 			<%= f.input :state, :label => "State",  :collection => State::NAMES, :include_blank => false,:label_html => {:class => "form_label"}%>	
@@ -30,7 +31,7 @@
 		    <legend>Person Responsible for account</legend>
         <input type="checkbox" name="medicalhistory[same_above_personal][]" value="same as above" id="same_above_person" <%if (@medicalhistory.same_above_personal) != nil%> checked <%end%>>Same as above
         <%= f.input :resp_name, :label=>"Name", :required=>false, :input_html => {:title => 'Must be something'},:label_html => {:class => "form_label"}%>
-			<%= f.input :resp_dob, :label=>"Birth Date", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'resp_date', :size=>7},:label_html => {:class => "form_label"}%>
+			<%= f.input :resp_dob, :label=>"Birth Date", :as => :string, :input_html => {:size => 10}, :input_html => {:id => 'resp_date'},:label_html => {:class => "form_label"}%>
 			<%= f.input :resp_relation, :label=>"Relation", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'resp_relation', :size=>7},:label_html => {:class => "form_label"}%>
 			<%= f.input :resp_add, :label=>"Billing Address", :as => :string, :input_html => {:size => 32}, :input_html => {:id => 'resp_address'},:label_html => {:class => "form_label"}%>
 			<%= f.input :resp_city, :label=>"City", :as => :string, :input_html => {:size => 7}, :input_html => {:id => 'resp_city', :size=>7},:label_html => {:class => "form_label"}%>
@@ -38,7 +39,7 @@
 			<%= f.input :resp_zip, :label => "Zip",  :input_html => {:size => 4, :id => 'resp_zipo'},:label_html => {:class => "form_label"}%>	
 			<%= f.input :resp_home_phone,:label=>"Home Phone", :input_html => {:id => 'resp_phone'},:label_html => {:class => "form_label"}%>	
 			<%= f.input :resp_work_phone, :label => "Work Phone" ,  :input_html => {:id => 'resp_phoneExt'},:label_html => {:class => "form_label"}%>
-			<%= f.input :resp_ssn, :label=>"SS#", :input_html => {:id => 'resp_ssn'},:label_html => {:class => "form_label"}%>
+			<%= f.input :resp_ssn, :label=>"SSN#", :input_html => {:id => 'resp_ssn'},:label_html => {:class => "form_label"}%>
 			<%= f.input :resp_emp, :label => "Employer",:label_html => {:class => "form_label"}, :input_html => {:id=>'resp_empl'}%>	
 			<%= f.input :resp_emp_term, :label => "How long there?" ,:label_html => {:class => "form_label"}, :input_html => {:id => 'resp_term'}%>
 			<%= f.input :resp_occupation ,:label_html => {:class => "form_label"}, :label=>"Occupation", :input_html => {:id => 'resp_occupation'}%>	
@@ -46,7 +47,6 @@
 
 	  <fieldset>
 			<legend>Spouse Information</legend>
-        <input type="checkbox" name="medicalhistory[same_above_relation][]" value="same as above" id="same_above_relation" <%if (@medicalhistory.same_above_relation) != nil%> checked <%end%>>Same as above
 			<%= f.input :spouse_name_2, :label=>"Name",:label_html => {:class => "form_label"}%>
 			<%= f.input :spouse_dob_2, :label=>"Birth Date", :as => :string, :input_html => {:size => 10}, :input_html => {:id => 'spouse_date' },:label_html => {:class => "form_label"}%>
 			<%= f.input :spouse_empl, :label => "Employer",:label_html => {:class => "form_label"}, :input_html => {:id => "spouse_empl"}%>	

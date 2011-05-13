@@ -2,12 +2,16 @@
 	  <legend>About you</legend>
     <table border="0">
       <tr>
-        <td><label class="show_label"> Name</label></td>
+        <td><label class="show_label"> First Name</label></td>
         <td><%=@medicalhistory.fname%></td>
       </tr>
       <tr>
-        <td><label class="show_label"> Preferred Name</label></td>
+        <td><label class="show_label"> Last Name</label></td>
         <td><%=@medicalhistory.lastname%></td>
+      </tr>
+      <tr>
+        <td><label class="show_label"> Preferred Name</label></td>
+        <td><%=@medicalhistory.pref_name%></td>
       </tr>
       <tr>
         <td><label class="show_label"> Sex</label></td>
@@ -26,7 +30,7 @@
         <td><%=@medicalhistory.age%></td>
       </tr>
       <tr>
-        <td><label class="show_label">SS#</label></td>
+        <td><label class="show_label">SSN#</label></td>
         <td><%=@medicalhistory.ssn%></td>
       </tr>
       <tr>
@@ -136,7 +140,7 @@
         <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.biss_phone%><%else%><%=@medicalhistory.resp_work_phone%><%end%></td>
       </tr>
       <tr>
-        <td><label class="show_label">SS#</label></td>
+        <td><label class="show_label">SSN#</label></td>
         <td><%if !(@medicalhistory.same_above_personal.blank?)%><%=@medicalhistory.ssn%><%else%><%=@medicalhistory.resp_ssn%><%end%></td>
       </tr>
       <tr>
@@ -156,7 +160,6 @@
 
   <fieldset >
     <legend>Spouse Information</legend>
-    <input type="checkbox" <%= "checked" unless @medicalhistory.same_above_relation.blank? %>>&nbsp;&nbsp;Same as above
       <table>
         <tr>
           <td><label class="show_label">Name</label></td>

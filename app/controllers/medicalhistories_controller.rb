@@ -30,27 +30,28 @@ class MedicalhistoriesController < ApplicationController
     @medicalhistory.current_step = @medicalhistory.steps.first
   end
 
+  def check_boxes(alloptions) 
+    checked_conditions = []
+    if alloptions != nil
+      alloptions.each do |condition|
+        checked_conditions.push(condition) unless condition.length <= 1
+      end
+      checked_conditions = checked_conditions.join(",")
+    end
+  end
+
   def create
     session[:medicalhistory_params].deep_merge!(params[:medicalhistory]) if params[:medicalhistory]
     @medicalhistory= Medicalhistory.new(session[:medicalhistory_params])
     @medicalhistory.current_step = session[:form_step]
+    print "came here" +  session[:form_step] unless session[:form_step] == nil
     if @medicalhistory.valid?
       if params[:back_button]
         @medicalhistory.previous_step
       elsif @medicalhistory.last_step?
-        selected_conditions = []
-        @medicalhistory.medical_conditions.each do |condition|
-          selected_conditions.push(condition) unless condition.length <= 1
-        end
-        print @medicalhistory.women.size
-        selected_women_conditions = []
-        @medicalhistory.women.each do |women_condition|
-          selected_women_conditions.push(women_condition) unless women_condition.length <= 1
-        end
-        selected_women_conditions = selected_women_conditions.join(",")
-        selected_conditions = selected_conditions.join(",")
-        @medicalhistory.medical_conditions = selected_conditions
-        @medicalhistory.women = selected_women_conditions
+        @medicalhistory.medical_conditions = check_boxes(@medicalhistory.medical_conditions)
+        @medicalhistory.women = check_boxes(@medicalhistory.women) 
+        @medicalhistory.allergic = check_boxes(@medicalhistory.allergic)
         @medicalhistory.save if @medicalhistory.all_valid?
       else
         @medicalhistory.next_step

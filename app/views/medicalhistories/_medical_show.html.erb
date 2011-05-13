@@ -23,7 +23,7 @@
 	<p id="question">Are you taking any medications or herbals?</p>
   <p id="answer"><%= @medicalhistory.medications%> <%= ": - " +@medicalhistory.medications_yes unless @medicalhistory.medications_yes.blank?%></p>
 
-	<p id="question">Are you allergic to any medicaitons or substances?</p>
+	<p id="question">Are you allergic to any medications or substances?</p>
   <p id="answer"><%= @medicalhistory.allergic%> <%= ": - " + @medicalhistory.allergic_yes unless @medicalhistory.allergic_yes.blank?%></p>
 
 	<p id="question">Have you used tobacco?</p>
