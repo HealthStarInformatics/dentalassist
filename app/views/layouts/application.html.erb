@@ -237,8 +237,13 @@ $('#same_above_person').change(function () {
 		<div id="C_headerBody">
 				<div id="C_userNav">
 						<ul id="C_userLinks">
-								<li class="C_userNavItem"><a class="J_loginLink J_onClick headerLogin" href="/login/">Log in</a></li>
-								<!--<li class="C_userNavItem"><a href="https://secure.meetup.com/register/" class="omnCamp omnrg_signup">Sign up</a></li>-->
+								<li class="C_userNavItem">
+                <%if current_user %>
+                  <a class="J_loginLink J_onClick headerLogin" href="/logout/">Logout</a>
+                <%else%>
+                  <a class="J_loginLink J_onClick headerLogin" href="/login/">Log in</a>
+                <%end%>
+                </li>
 						</ul>
 				</div>
 				<div id="C_globalNav">

@@ -1,14 +1,19 @@
 class MedicalhistoriesController < ApplicationController
   def index
-    @medicalhistories = Medicalhistory.all
+    if current_user and !current_user.username.eql?('bsharma')
+      @medicalhistories = []
+      @record = Medicalhistory.find(current_user.id)
+      @medicalhistories<<@record
+    end
+    if current_user.username.eql?('bsharma')
+      @medicalhistories = Medicalhistory.find(:all)
+    end
   end
 
-  def pdf
-    redirect_to "http://cricinfo.com"
-  end
 
   def show
-    @medicalhistory = Medicalhistory.find(params[:id])
+    
+    @medicalhistory = Medicalhistory.find(current_user.id)
       respond_to do |format| 
         format.html # show.html.erb 
         format.pdf {
@@ -28,6 +33,7 @@ class MedicalhistoriesController < ApplicationController
     @medicalhistory = Medicalhistory.new(session[:medicalhistory_params])	
     #@medicalhistory.current_step = session[:form_step]
     @medicalhistory.current_step = @medicalhistory.steps.first
+    @medicalhistory.user = User.new unless !@medicalhistory.current_step.eql?("about")
   end
 
   def check_boxes(alloptions) 
@@ -44,9 +50,11 @@ class MedicalhistoriesController < ApplicationController
     session[:medicalhistory_params].deep_merge!(params[:medicalhistory]) if params[:medicalhistory]
     @medicalhistory= Medicalhistory.new(session[:medicalhistory_params])
     @medicalhistory.current_step = session[:form_step]
-    print "came here" +  session[:form_step] unless session[:form_step] == nil
-    if @medicalhistory.valid?
-      if params[:back_button]
+   print "Step: "+  @medicalhistory.current_step.to_s
+#  print "session - created_user " + session[:created_user] if session[:created_user] != nil
+#    if (!session[:created_user].eql?("created") && @medicalhistory.user.valid? && @medicalhistory.valid?) || session[:created_user].eql?("created")
+    if (@medicalhistory.user.valid? && @medicalhistory.valid?) 
+  if params[:back_button]
         @medicalhistory.previous_step
       elsif @medicalhistory.last_step?
         @medicalhistory.medical_conditions = check_boxes(@medicalhistory.medical_conditions)
@@ -54,8 +62,14 @@ class MedicalhistoriesController < ApplicationController
         @medicalhistory.allergic = check_boxes(@medicalhistory.allergic)
         @medicalhistory.save if @medicalhistory.all_valid?
       else
+#if @medicalhistory.current_step.eql?("about")
+#         print "\nbefore (new_creation)" + @medicalhistory.user.new_record?.to_s
+#            @medicalhistory.user.save if @medicalhistory.user.valid?
+#            flash[:notice] = "#{@medicalhistory.user.email} successfully registered. Continue to fill the form or login and fill it later"
+#            print "\nafter (new record)" + @medicalhistory.user.new_record?.to_s
+#            session[:created_user] = "created";
+#        end
         @medicalhistory.next_step
-        print "test2" + @medicalhistory.dob.to_s
       end
       session[:form_step] = @medicalhistory.current_step
     end
@@ -63,7 +77,7 @@ class MedicalhistoriesController < ApplicationController
       render "new"
     else
       session[:form_step] = session[:medicalhistory_params] = nil
-      flash[:notice] = "New Patient Registration Complete!"
+      flash[:notice] = "New Patient Registration Complete.  Username: #{@medicalhistory.user.username}"
       redirect_to @medicalhistory
     end
   end

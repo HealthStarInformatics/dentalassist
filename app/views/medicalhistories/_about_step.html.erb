@@ -1,4 +1,3 @@
-<div id="notice">Register me as I fill the form  <a href="#">Learn more</a></div>
 <fieldset>
 	  <legend>About you</legend>
 			<%= f.input :fname, :required => true, :label=>"First Name", :label_html => {:class => "form_label"}%>
@@ -17,8 +16,10 @@
 			<%= f.input :biss_phone, :label => "Work Phone" ,  :input_html => {:id => 'phoneExt'},:label_html => {:class => "form_label"}%>
 			<%= f.input :pager , :input_html => {:id => 'pager'},:label_html => {:class => "form_label"}%>	
 			<%= f.input :cell_phone,  :input_html => {:id => 'cellphone'},:label_html => {:class => "form_label"}%>	
-			<%= f.input :email,:label_html => {:class => "form_label"}%>
-			<%= f.input :emp, :label => "Employer",:label_html => {:class => "form_label"}%>	
+			<%=f.fields_for :user do |builder|%>
+        <%= render "registration_form", :f => builder %>
+      <% end %>
+      <%= f.input :emp, :label => "Employer",:label_html => {:class => "form_label"}%>	
 			<%= f.input :emp_term, :label => "How long there?" ,:label_html => {:class => "form_label"}%>
 			<%= f.input :occupation ,:label_html => {:class => "form_label"}%>	
 			<%= f.input :emp_address, :label => "Employer Address",  :input_html => {:size => 32},:label_html => {:class => "form_label"}%>	
