@@ -1,12 +1,12 @@
 class MedicalhistoriesController < ApplicationController
   def index
     print "administrator: " + current_user.administrator
-    if current_user and !current_user.username.eql?('bsharma')
-      @medicalhistories = []
+    if current_user and current_user.administrator.blank?
+    @medicalhistories = []
       @record = Medicalhistory.where("user_id = ?", current_user.id).first
       @medicalhistories<<@record
     end
-    if current_user.username.eql?('bsharma')
+    if current_user.administrator.eql?("true")
       @medicalhistories = Medicalhistory.find(:all)
     end
   end
