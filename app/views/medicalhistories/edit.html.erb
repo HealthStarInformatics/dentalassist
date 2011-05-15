@@ -1,6 +1,10 @@
 <%= simple_form_for @medicalhistory do |f| %>
-  <% @medicalhistory.steps.each do |step| %>
-    <%=render "#{step}_step", :f => f%>
-  <%end%>
+  <%= render "edit_about_step", :f => f%>
+  <%= render "insurance_step", :f => f%>
+  <%= render "medical_step", :f => f%>
+  <%= render "dental_step", :f => f%>
+  <%= render "consent_step", :f => f%>
+
+  
   <%=positive_button_submit_tag "Update Records"%>
 <%end%>

@@ -2,7 +2,7 @@ class MedicalhistoriesController < ApplicationController
   def index
     if current_user and !current_user.username.eql?('bsharma')
       @medicalhistories = []
-      @record = Medicalhistory.find(current_user.id)
+      @record = Medicalhistory.where("user_id = ?", current_user.id).first
       @medicalhistories<<@record
     end
     if current_user.username.eql?('bsharma')
@@ -12,8 +12,7 @@ class MedicalhistoriesController < ApplicationController
 
 
   def show
-    
-    @medicalhistory = Medicalhistory.find(current_user.id)
+    @medicalhistory = Medicalhistory.where("user_id = ?", current_user.id).first
       respond_to do |format| 
         format.html # show.html.erb 
         format.pdf {
@@ -23,8 +22,7 @@ class MedicalhistoriesController < ApplicationController
         send_data(kit.to_pdf, :filename => "#{@medicalhistory.fname}.pdf",
           :type => 'application/pdf', :disposition => 'attachment')        
         return
-    }
-
+        }
       end
   end
 
@@ -83,12 +81,20 @@ class MedicalhistoriesController < ApplicationController
   end
 
   def edit
-    @medicalhistory = Medicalhistory.find(params[:id])
+    @medicalhistory = Medicalhistory.where("user_id = ?", current_user.id).first
+    @medicalhistory.medical_conditions = @medicalhistory.medical_conditions.split(",")
+    @medicalhistory.women = @medicalhistory.women.split(",")
+    @medicalhistory.allergic = @medicalhistory.allergic.split(",")
   end
 
   def update
+    print "came in update"
     @medicalhistory = Medicalhistory.find(params[:id])
-    if @medicalhistory.update_attributes(params[:medicalhistory])
+    @edited_medicalhistory = params[:medicalhistory]
+    params[:medicalhistory][:medical_conditions] = check_boxes(params[:medicalhistory][:medical_conditions])
+    params[:medicalhistory][:women] = check_boxes(params[:medicalhistory][:women])
+    params[:medicalhistory][:allergic] = check_boxes(params[:medicalhistory][:allergic])
+    if @medicalhistory.update_attributes(@edited_medicalhistory)
       redirect_to @medicalhistory, :notice  => "Successfully updated medicalhistory."
     else
       render :action => 'edit'
