@@ -1,5 +1,6 @@
 class MedicalhistoriesController < ApplicationController
   def index
+    print "administrator: " + current_user.administrator
     if current_user and !current_user.username.eql?('bsharma')
       @medicalhistories = []
       @record = Medicalhistory.where("user_id = ?", current_user.id).first

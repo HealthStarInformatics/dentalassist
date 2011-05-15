@@ -239,7 +239,7 @@ $('#same_above_person').change(function () {
 						<ul id="C_userLinks">
 								<li class="C_userNavItem">
                 <%if current_user %>
-                  <%= link_to "Edit Profile", edit_user_path, :class=>"J_loginLink J_onClick headerLogin" %> |
+                  <%= link_to "Edit Profile", edit_user_path(:current)%> |
                   <a class="J_loginLink J_onClick headerLogin" href="/logout/">Logout</a>
                 <%else%>
                   <a class="J_loginLink J_onClick headerLogin" href="/login/">Log in</a>
