@@ -1,0 +1,21 @@
+<% title "Dentistries" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+  </tr>
+  <% for dentistry in @dentistries %>
+    <tr>
+      <td><%= dentistry.name %></td>
+      <td><%= dentistry.address %></td>
+      <td><%= dentistry.phone %></td>
+      <td><%= link_to "Show", dentistry %></td>
+      <td><%= link_to "Edit", edit_dentistry_path(dentistry) %></td>
+      <td><%= link_to "Destroy", dentistry, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Dentistry", new_dentistry_path %></p>

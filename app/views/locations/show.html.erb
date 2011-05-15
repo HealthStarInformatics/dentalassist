@@ -1,0 +1,28 @@
+<% title "Locations" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @locations.name %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @locations.address %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= @locations.phone %>
+</p>
+<p>
+  <strong>Hours:</strong>
+  <%= @locations.hours %>
+</p>
+<p>
+  <strong>Dentistry:</strong>
+  <%= @locations.dentistry_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_locations_path(@locations) %> |
+  <%= link_to "Destroy", @locations, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", locations_path %>
+</p>

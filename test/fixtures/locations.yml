@@ -1,0 +1,13 @@
+one:
+  name: MyString
+  address: MyString
+  phone: MyString
+  hours: MyString
+  dentistry_id: 1
+
+two:
+  name: MyString
+  address: MyString
+  phone: MyString
+  hours: MyString
+  dentistry_id: 1

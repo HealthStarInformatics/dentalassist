@@ -1,4 +1,8 @@
 Dentalassistant::Application.routes.draw do
+  resources :locations
+
+  resources :dentistries
+
   match "login" => "user_sessions#new", :as => :login
   match "logout" => "user_sessions#destroy", :as => :logout
   match "editprofile" => "user#edit", :as => :editprofile

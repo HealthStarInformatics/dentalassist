@@ -1,0 +1,20 @@
+<% title "Dentistry" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dentistry.name %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @dentistry.address %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= @dentistry.phone %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_dentistry_path(@dentistry) %> |
+  <%= link_to "Destroy", @dentistry, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", dentistries_path %>
+</p>
