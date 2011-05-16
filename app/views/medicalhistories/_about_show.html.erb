@@ -3,7 +3,7 @@
     <table border="0">
       <tr>
         <td><label class="show_label"> Location</label></td>
-        <td><%=@medicalhistory.location.name%></td>
+        <td><%=@medicalhistory.location.name if @medicalhistory.location.present?%></td>
       </tr>
       <tr>
         <td><label class="show_label"> First Name</label></td>
