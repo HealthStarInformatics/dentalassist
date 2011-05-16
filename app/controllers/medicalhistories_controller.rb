@@ -8,6 +8,9 @@ class MedicalhistoriesController < ApplicationController
     if location_admin?
       @medicalhistories = Medicalhistory.find(:all)
     end
+    if super_admin?
+      @medicalhistories = []
+    end
   end
 
 
