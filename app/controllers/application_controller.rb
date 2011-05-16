@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  #test
   protect_from_forgery
   filter_parameter_logging :password, :password_confirmation
   
