@@ -16,10 +16,10 @@
       <td><%= locations.hours %></td>
       <td><%= locations.dentistry_id %></td>
       <td><%= link_to "Show", locations %></td>
-      <td><%= link_to "Edit", edit_locations_path(locations) %></td>
+      <td><%= link_to "Edit", edit_location_path(locations) %></td>
       <td><%= link_to "Destroy", locations, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Locations", new_locations_path %></p>
+<p><%= link_to "New Locations", new_location_path %></p>

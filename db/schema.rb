@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110515151418) do
+ActiveRecord::Schema.define(:version => 20110516025028) do
 
   create_table "dentistries", :force => true do |t|
     t.string   "name"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(:version => 20110515151418) do
     t.string   "spouse_name"
     t.string   "closest_relative"
     t.string   "closest_relative_phone"
+    t.string   "relation_to_other_person"
+    t.string   "refered_by"
     t.integer  "age"
     t.string   "pager"
     t.string   "emp"
@@ -152,6 +154,7 @@ ActiveRecord::Schema.define(:version => 20110515151418) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "administrator"
+    t.integer  "location_admin_id"
   end
 
 end

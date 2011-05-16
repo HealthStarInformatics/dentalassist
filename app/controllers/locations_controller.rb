@@ -1,18 +1,21 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Locations.all
+    @locations = Location.all
   end
 
   def show
-    @locations = Locations.find(params[:id])
+    @locations = Location.find(params[:id])
   end
 
   def new
-    @locations = Locations.new
+    @locations = Location.new
+    @dentistries = Dentistry.all
   end
 
   def create
-    @locations = Locations.new(params[:locations])
+    @locations = Location.new(params[:location])
+    print "parms@!!! #{params[:location]}" 
+    print "test!!! #{@locations.name}"
     if @locations.save
       redirect_to @locations, :notice => "Successfully created locations."
     else
@@ -21,11 +24,11 @@ class LocationsController < ApplicationController
   end
 
   def edit
-    @locations = Locations.find(params[:id])
+    @locations = Location.find(params[:id])
   end
 
   def update
-    @locations = Locations.find(params[:id])
+    @locations = Location.find(params[:id])
     if @locations.update_attributes(params[:locations])
       redirect_to @locations, :notice  => "Successfully updated locations."
     else
@@ -34,7 +37,7 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-    @locations = Locations.find(params[:id])
+    @locations = Location.find(params[:id])
     @locations.destroy
     redirect_to locations_url, :notice => "Successfully destroyed locations."
   end

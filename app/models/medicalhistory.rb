@@ -1,7 +1,8 @@
 class Medicalhistory < ActiveRecord::Base
   before_update :check_boxes
-  belongs_to :user
+  belongs_to :user #user_id
   accepts_nested_attributes_for :user
+  belongs_to :location #location_id
   
 
 

@@ -1,16 +1,18 @@
 <%= form_for @dentistry do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </p>
-  <p>
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </p>
-  <p><%= f.submit %></p>
+  <table border="">
+   <tr>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :address %></td>
+    <td><%= f.text_field :address %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :phone %></td>
+    <td><%= f.text_field :phone %></td>
+  </tr>
+  <tr><td><%=positive_button_submit_tag "Add Dentistry"%></td></tr>
+  </table>
 <% end %>
