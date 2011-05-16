@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110516025028) do
+ActiveRecord::Schema.define(:version => 20110516035201) do
 
   create_table "dentistries", :force => true do |t|
     t.string   "name"
@@ -58,8 +58,6 @@ ActiveRecord::Schema.define(:version => 20110516025028) do
     t.string   "spouse_name"
     t.string   "closest_relative"
     t.string   "closest_relative_phone"
-    t.string   "relation_to_other_person"
-    t.string   "refered_by"
     t.integer  "age"
     t.string   "pager"
     t.string   "emp"
@@ -138,6 +136,7 @@ ActiveRecord::Schema.define(:version => 20110516025028) do
     t.string   "signature_date"
     t.string   "pref_name"
     t.integer  "user_id"
+    t.integer  "location_id"
   end
 
   create_table "states", :force => true do |t|

@@ -1,19 +1,25 @@
 class MedicalhistoriesController < ApplicationController
   def index
     print "administrator: " + current_user.administrator
-    if current_user and current_user.administrator.blank?
-    @medicalhistories = []
+    if normal_user?
+      @medicalhistories = []
       @record = Medicalhistory.where("user_id = ?", current_user.id).first
       @medicalhistories<<@record
     end
-    if current_user.administrator.eql?("true")
+    if location_admin?
       @medicalhistories = Medicalhistory.find(:all)
     end
   end
 
 
   def show
-    @medicalhistory = Medicalhistory.where("user_id = ?", current_user.id).first
+    if normal_user? and current_user.id == params[:id]
+      @medicalhistory = Medicalhistory.find(params[:id])
+    elsif location_admin?
+      @medicalhistory = Medicalhistory.find(params[:id])
+    end
+#@medicalhistory = Medicalhistory.where("user_id = ?", current_user.id).first
+    print "CLASS!!!!!!!!!" + @medicalhistory.class.to_s
       respond_to do |format| 
         format.html # show.html.erb 
         format.pdf {

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   filter_parameter_logging :password, :password_confirmation
   
-  helper_method :current_user, :current_user_session
+  helper_method :current_user, :current_user_session, :admin_user
   
   private
 
@@ -15,6 +15,15 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
+  end
+  def normal_user?
+    return true if current_user.administrator.blank?
+  end
+  def location_admin?
+    return true if current_user.administrator.eql?("location_admin")
+  end
+  def super_admin?
+    return true if current_user.administrator.eql?("super_admin")
   end
   def require_user
     unless current_user
