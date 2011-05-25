@@ -1,28 +1,34 @@
-<% title "Locations" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @locations.name %>
-</p>
-<p>
-  <strong>Address:</strong>
-  <%= @locations.address %>
-</p>
-<p>
-  <strong>Phone:</strong>
-  <%= @locations.phone %>
-</p>
-<p>
-  <strong>Hours:</strong>
-  <%= @locations.hours %>
-</p>
-<p>
-  <strong>Dentistry:</strong>
-  <%= Dentistry.find(@locations.dentistry_id).name %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_location_path(@locations) %> |
-  <%= link_to "Destroy", @locations, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", locations_path %>
-</p>
+<div class="group">
+  <div class="wide_box">
+    <div class="inner">
+      <table>
+        <tr>
+          <td><label>Name</label></td>
+          <td><%=@location.name%></td>
+        </tr>
+        <tr>
+          <td><label>Address</label></td>
+          <td><%=@location.address%></td>
+        </tr>
+        <tr>
+          <td><label>Phone</label></td>
+          <td><%=@location.phone%></td>
+        </tr>
+        <tr>
+          <td><label>Availables Days</label></td>
+          <td>
+  <ul>
+  <%for dayavailable in  @location.dayavailables%>
+    <li><%=dayavailable.name%></li>
+  <% end %>
+  </ul></td>
+        </tr>
+        <tr>
+          <td><label>Dentistry</label></td>
+          <td><%= Dentistry.find(@location.dentistry_id).name %></td>
+        </tr>
+        <tr><td> <%= link_to "Edit", edit_location_path(@location) %>  </td></tr>
+  </div>
+</div>
+</div>

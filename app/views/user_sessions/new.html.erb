@@ -1,18 +1,22 @@
 
 <% form_for (@user_session, :url => { :action => "create" }) do |f|%>
   <%= f.error_messages %>
-
-<table>
-  <tr>
-    <td><label>Username</label></td>
-    <td><%=f.text_field :username%></td>
-  </tr>
-  <tr>
-    <td><%=f.label :password %></td>
-    <td><%= f.password_field :password%></td>
-  </tr>
-</table>
-
+<div class="group">
+  <div class="wide_box">
+    <div class="inner">
+      <table>
+        <tr>
+          <td><label>Username</label></td>
+          <td><%=f.text_field :username%></td>
+        </tr>
+        <tr>
+          <td><%=f.label :password %></td>
+          <td><%= f.password_field :password%></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
 <div id="loginbutton">
  <%= positive_button_submit_tag "Login", {:class => "arrowright"} %> 
 </div>

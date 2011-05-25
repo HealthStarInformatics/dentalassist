@@ -1,4 +1,9 @@
-<%= form_for @locations do |f| %>
+<% if require_loc_admin.present? %>
+
+<div class="group">
+  <div class="wide_box">
+    <div class="inner">
+<%= form_for @location do |f| %>
   <%= f.error_messages %>
   <table border="">
     <tr>
@@ -14,15 +19,20 @@
       <td><%= f.text_field :phone %></td>
     </tr>
     <tr>
-      <td><%= f.label :hours %></td> 
-      <td><%= f.text_area :hours, :cols=>23, :rows=>4 %></td>
+      <td><%= f.label :day_tokens, "Available Days"%></td> 
+      <td><%= f.text_field :day_tokens, "data-pre" => @location.dayavailables.map(&:attributes).to_json%></td>
     </tr>
     <tr>
       <td><%= f.label :dentistry_id %></td> 
-      <td><%= select("location", "dentistry_id", @dentistries.collect {|p| [p.name, p.id]})%></td>
+      <td><%= select("location", "dentistry_id", Dentistry.all.collect {|p| [p.name, p.id]})%></td>
     </tr>
     <tr>
-      <td><%= positive_button_submit_tag "Add Location"%></td> 
+      <td><%= positive_button_submit_tag "Submit"%></td> 
     </tr>
   </table>
 <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
+

@@ -611,3 +611,41 @@ legend {
 		}
 		fieldset p { margin-top: 0; }
 		}
+table#line_items {
+  color: #000000;
+}
+#line_items th {
+background: none repeat scroll 0 0 #D0D0C8;
+}
+#line_items tr.odd td {
+background: none repeat scroll 0 0 #FFFFFF;
+
+}
+#line_items tr.even td {
+  background-color: #E7E7DE;
+}.group {
+    background: url("http://s9.muscache.com/images/modules/messaging_tile_gray.png") repeat scroll 0 0 transparent;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 640px;
+}.wide_box {
+    background: url("http://s9.muscache.com/images/modules/page4-white-638.png") no-repeat scroll left bottom transparent;
+    padding-bottom: 8px;
+}.wide_box .inner {
+    background: url("http://s9.muscache.com/images/modules/page4-white-638.png") no-repeat scroll 0 0 transparent;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+.group table tr td {
+width: 160px;
+padding: 10px 10px 10px 10px;
+}
+.group table tr td label {
+    font-weight: bold;
+}
+.group ul {
+  margin-left: 15px;
+  list-style: circle;
+}

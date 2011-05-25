@@ -1,0 +1,29 @@
+<% title "Available Times" %>
+
+<table>
+  <tr>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thur</th>
+    <th>Fri</th>
+    <th>Sat</th>
+    <th>Sun</th>
+  </tr>
+  <% for available_times in @available_times %>
+    <tr>
+      <td><%= available_times.mon %></td>
+      <td><%= available_times.tue %></td>
+      <td><%= available_times.wed %></td>
+      <td><%= available_times.thur %></td>
+      <td><%= available_times.fri %></td>
+      <td><%= available_times.sat %></td>
+      <td><%= available_times.sun %></td>
+      <td><%= link_to "Show", available_times %></td>
+      <td><%= link_to "Edit", edit_available_times_path(available_times) %></td>
+      <td><%= link_to "Destroy", available_times, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Available Times", new_available_time_path %></p>

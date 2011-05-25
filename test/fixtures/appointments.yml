@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  day: MyString
+  time: 2011-05-24 06:08:04
+  comments: MyString
+  feedback: MyString
+
+two:
+  day: MyString
+  time: 2011-05-24 06:08:04
+  comments: MyString
+  feedback: MyString

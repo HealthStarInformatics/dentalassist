@@ -1,0 +1,32 @@
+<%= form_for @available_times do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :mon %><br />
+    <%= f.check_box :mon %>
+  </p>
+  <p>
+    <%= f.label :tue %><br />
+    <%= f.check_box :tue %>
+  </p>
+  <p>
+    <%= f.label :wed %><br />
+    <%= f.check_box :wed %>
+  </p>
+  <p>
+    <%= f.label :thur %><br />
+    <%= f.check_box :thur %>
+  </p>
+  <p>
+    <%= f.label :fri %><br />
+    <%= f.check_box :fri %>
+  </p>
+  <p>
+    <%= f.label :sat %><br />
+    <%= f.check_box :sat %>
+  </p>
+  <p>
+    <%= f.label :sun %><br />
+    <%= f.check_box :sun %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

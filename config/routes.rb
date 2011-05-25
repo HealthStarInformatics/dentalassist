@@ -1,8 +1,12 @@
 Dentalassistant::Application.routes.draw do
+  get "dayavailable/index"
+
+  resources :available_times
+
   resources :locations
 
   resources :dentistries
-
+  match "dayavailables" => "dayavailable#index"
   match "login" => "user_sessions#new", :as => :login
   match "logout" => "user_sessions#destroy", :as => :logout
   match "editprofile" => "user#edit", :as => :editprofile

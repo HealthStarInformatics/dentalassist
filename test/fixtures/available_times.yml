@@ -1,0 +1,17 @@
+one:
+  mon: false
+  tue: false
+  wed: false
+  thur: false
+  fri: false
+  sat: false
+  sun: false
+
+two:
+  mon: false
+  tue: false
+  wed: false
+  thur: false
+  fri: false
+  sat: false
+  sun: false

@@ -10,7 +10,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110516035201) do
+ActiveRecord::Schema.define(:version => 20110524104451) do
+
+  create_table "appointments", :force => true do |t|
+    t.string   "day"
+    t.datetime "time"
+    t.string   "comments"
+    t.string   "feedback"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "available_times", :force => true do |t|
+    t.boolean  "mon"
+    t.boolean  "tue"
+    t.boolean  "wed"
+    t.boolean  "thur"
+    t.boolean  "fri"
+    t.boolean  "sat"
+    t.boolean  "sun"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "location_id"
+  end
+
+  create_table "dayavailables", :force => true do |t|
+    t.string   "day"
+    t.string   "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
   create_table "dentistries", :force => true do |t|
     t.string   "name"
@@ -33,6 +64,13 @@ ActiveRecord::Schema.define(:version => 20110516035201) do
     t.string   "phone"
     t.string   "hours"
     t.integer  "dentistry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locavailabilities", :force => true do |t|
+    t.integer  "location_id"
+    t.integer  "dayavailable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -144,6 +182,13 @@ ActiveRecord::Schema.define(:version => 20110516035201) do
     t.datetime "updated_at"
   end
 
+  create_table "takenappointments", :force => true do |t|
+    t.integer  "appointment_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "crypted_password"
@@ -154,6 +199,8 @@ ActiveRecord::Schema.define(:version => 20110516035201) do
     t.string   "username"
     t.string   "administrator"
     t.integer  "location_admin_id"
+    t.string   "firstname"
+    t.string   "lastname"
   end
 
 end

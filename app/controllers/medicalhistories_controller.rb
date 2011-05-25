@@ -16,8 +16,10 @@ class MedicalhistoriesController < ApplicationController
 
   def show
     if normal_user? 
+      print "came here"
       @medicalhistory = Medicalhistory.where("user_id = ?", current_user.id).first
     elsif location_admin?
+      print "came here 1" + current_user.username.to_s
       @medicalhistory = Medicalhistory.find(params[:id])
     end
 #@medicalhistory = Medicalhistory.where("user_id = ?", current_user.id).first
@@ -57,8 +59,6 @@ class MedicalhistoriesController < ApplicationController
     @medicalhistory= Medicalhistory.new(session[:medicalhistory_params])
     @medicalhistory.current_step = session[:form_step]
    print "Step: "+  @medicalhistory.current_step.to_s
-#  print "session - created_user " + session[:created_user] if session[:created_user] != nil
-#    if (!session[:created_user].eql?("created") && @medicalhistory.user.valid? && @medicalhistory.valid?) || session[:created_user].eql?("created")
     if (@medicalhistory.user.valid? && @medicalhistory.valid?) 
   if params[:back_button]
         @medicalhistory.previous_step
@@ -66,15 +66,20 @@ class MedicalhistoriesController < ApplicationController
         @medicalhistory.medical_conditions = check_boxes(@medicalhistory.medical_conditions)
         @medicalhistory.women = check_boxes(@medicalhistory.women) 
         @medicalhistory.allergic = check_boxes(@medicalhistory.allergic)
-        @medicalhistory.save if @medicalhistory.all_valid?
+        @medicalhistory.user.firstname = @medicalhistory.fname
+        @medicalhistory.user.lastname = @medicalhistory.lastname
+        if @medicalhistory.all_valid?
+          @medicalhistory.save 
+          apptmt = Appointment.new
+#apptmt.day = Dayavailable.find(@medicalhistory.appointment).name
+          apptmt.day = Date::DAYNAMES[@medicalhistory.aptmt_date.to_date.wday]
+          datetime_local = "#{@medicalhistory.aptmt_date} #{@medicalhistory.aptmt_time}"
+          print "DATEEEEEEEEEEEEEEEEEEEE" + datetime_local
+          apptmt.time = Time.parse(datetime_local)
+          apptmt.user_id = @medicalhistory.user.id
+          apptmt.save
+        end
       else
-#if @medicalhistory.current_step.eql?("about")
-#         print "\nbefore (new_creation)" + @medicalhistory.user.new_record?.to_s
-#            @medicalhistory.user.save if @medicalhistory.user.valid?
-#            flash[:notice] = "#{@medicalhistory.user.email} successfully registered. Continue to fill the form or login and fill it later"
-#            print "\nafter (new record)" + @medicalhistory.user.new_record?.to_s
-#            session[:created_user] = "created";
-#        end
         @medicalhistory.next_step
       end
       session[:form_step] = @medicalhistory.current_step

@@ -1,4 +1,8 @@
 class Medicalhistory < ActiveRecord::Base
+  attr_accessor :appointment, :aptmt_date, :aptmt_time
+
+
+
   before_update :check_boxes
   belongs_to :user #user_id
   accepts_nested_attributes_for :user
@@ -12,7 +16,16 @@ class Medicalhistory < ActiveRecord::Base
   validates_presence_of :primary_insured_dob, :if => lambda { |o| o.current_step == "insurance" }
   validate :user, :if => lambda {|o| o.current_step == "insurance"}
 
-def current_step
+  def validate
+    if current_step == "consent" and !"#{fname.strip} #{lastname.strip}".eql?(signature) 
+      errors.add(:signature, "doesn't match")
+    end
+    if current_step == "consent" and !signature_date.eql?(Date.today.to_s)
+      errors.add(:signature_date, "doesn't match")
+    end
+  end
+
+def current_step 
   @current_step ||  steps.first
 end
 
@@ -25,7 +38,7 @@ def already_created_user
 end
 
 def steps
-  %w[about insurance medical dental consent]
+  %w[about insurance medical dental consent appointment]
 end
 
 def user_creation_options

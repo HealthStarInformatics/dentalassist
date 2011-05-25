@@ -4,41 +4,43 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @locations = Location.find(params[:id])
+    @location = Location.find(params[:id])
   end
 
   def new
-    @locations = Location.new
-    @dentistries = Dentistry.all
+    @location = Location.new
   end
 
   def create
-    @locations = Location.new(params[:location])
-    print "parms@!!! #{params[:location]}" 
-    print "test!!! #{@locations.name}"
-    if @locations.save
-      redirect_to @locations, :notice => "Successfully created locations."
+    @location = Location.new(params[:location])
+    if @location.save
+      redirect_to @location, :notice => "Successfully created locations."
     else
       render :action => 'new'
     end
   end
 
   def edit
-    @locations = Location.find(params[:id])
+    @location = Location.find(params[:id])
   end
 
   def update
-    @locations = Location.find(params[:id])
-    if @locations.update_attributes(params[:locations])
-      redirect_to @locations, :notice  => "Successfully updated locations."
+    print "CAME HERRRRRRRRRRRRRRRRRRRRRRRRR"
+    @location = Location.find(params[:id])
+    print "came here"
+    print params[:location].to_yaml
+    if @location.update_attributes(params[:location])
+      print "yo"
+      redirect_to @location, :notice  => "Successfully updated locations."
     else
+      print "yono"
       render :action => 'edit'
     end
   end
 
   def destroy
-    @locations = Location.find(params[:id])
-    @locations.destroy
+    @location = Location.find(params[:id])
+    @location.destroy
     redirect_to locations_url, :notice => "Successfully destroyed locations."
   end
 end

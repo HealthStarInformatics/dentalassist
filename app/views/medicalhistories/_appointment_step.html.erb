@@ -1,0 +1,15 @@
+
+
+<fieldset>
+  <legend>Appointment</legend>
+  <p>Please pick a day you'd like to come to <%=@medicalhistory.location.name%> location</p>
+  <%=f.input :aptmt_date, :label=>"Preferred Date", :input_html=>{:id=>"datepicker"}%>
+  <p>Please pick a time you'd like to come to <%=@medicalhistory.location.name%> location</p>
+  <%=f.input :aptmt_time, :label=>"Preferred time", :input_html=>{:id=>"timepicker", :size=>"10"}%>
+</fieldset>
+
+
+
+<script type="text/javascript">
+  var daysToDisable = <%=@medicalhistory.location.days_numbers%>; 
+</script>

@@ -1,3 +1,11 @@
+<% if current_user && normal_user? %>
+
+<div id="alreadyfilled_normal">
+  You've already filled out the form, please click <a href="/medicalhistories/edit"> here </a> if you wish to edit it.
+</div>
+
+
+<% else %>
 <%= simple_form_for @medicalhistory do |f| %>
 <div class="D_boxsection step-section ">
 		<div class="D_boxcols divby5">
@@ -62,4 +70,4 @@
   </tr>
  </center> 
 <% end %>
-
+<% end %>

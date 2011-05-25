@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   filter_parameter_logging :password, :password_confirmation
   
-  helper_method :current_user, :current_user_session, :location_admin?, :normal_user?, :super_admin?
+  helper_method :current_user, :current_user_session, :location_admin?, :normal_user?, :super_admin?, :require_user, 
+  :require_loc_admin, :require_super_admin
   
   private
 
@@ -32,8 +33,27 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_url
       return false
     end
+    return true
   end
 
+  def require_loc_admin
+    unless location_admin?
+      store_location
+      flash[:notice] = "You must be logged in as location admin to access this page"
+      redirect_to new_user_session_url
+      return false
+    end
+    return true
+  end
+  def require_super_admin
+    unless super_admin?
+      store_location
+      flash[:notice] = "You must be logged in as admin to access this page"
+      redirect_to new_user_session_url
+      return false
+    end
+    return true
+  end
   def require_no_user
     if current_user
       store_location

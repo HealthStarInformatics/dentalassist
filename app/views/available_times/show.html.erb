@@ -1,0 +1,36 @@
+<% title "Available Times" %>
+
+<p>
+  <strong>Mon:</strong>
+  <%= @available_times.mon %>
+</p>
+<p>
+  <strong>Tue:</strong>
+  <%= @available_times.tue %>
+</p>
+<p>
+  <strong>Wed:</strong>
+  <%= @available_times.wed %>
+</p>
+<p>
+  <strong>Thur:</strong>
+  <%= @available_times.thur %>
+</p>
+<p>
+  <strong>Fri:</strong>
+  <%= @available_times.fri %>
+</p>
+<p>
+  <strong>Sat:</strong>
+  <%= @available_times.sat %>
+</p>
+<p>
+  <strong>Sun:</strong>
+  <%= @available_times.sun %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_available_times_path(@available_times) %> |
+  <%= link_to "Destroy", @available_times, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", available_times_path %>
+</p>

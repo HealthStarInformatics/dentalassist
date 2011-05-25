@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   }
   has_many :medicalhistory 
   belongs_to :location, :foreign_key => 'location_admin_id' #foreign_key
+#has_many :takenappointment
+  has_many :appointments#, :through => :takenappointment
 end
