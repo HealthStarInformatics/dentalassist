@@ -40,7 +40,6 @@
                   <%= link_to "Edit Profile", edit_user_path(:current)%> |
                   <a class="J_loginLink J_onClick headerLogin" href="/logout/">Logout</a>
                 <%elsif location_admin?%>
-                  <%= link_to "Add Location", new_location_path%> |
                   <%= link_to "Edit Profile", edit_user_path(:current)%> |
                   <a class="J_loginLink J_onClick headerLogin" href="/logout/">Logout</a>
                 <%elsif super_admin?%>
@@ -78,16 +77,16 @@
 										</span>
 								</a>
                 <% end %>
-								<a href="#" class="omnCamp omnic_sn1" id="tabs_start">
+								<a href="/appointment" class="omnCamp omnic_sn1" id="tabs_start">
 										<span class="C_startContainer C_tabContent">
 										  <span class="C_topBig">Appointments</span>
-										  <span class="C_topSm">schedule appointments</span>
+										  <span class="C_topSm"><%if location_admin?%>view upcoming appointments<%else%>view scheduled appointments<%end%></span>
 										</span>
 								</a>
-								<a href="#" class="omnCamp omnrg_perksheader" >
+								<a href="/locations" class="omnCamp omnrg_perksheader" >
 										<span class="C_startContainer C_tabContent">
 										  <span class="C_topBig">Locations</span>
-										  <span class="C_topSm">list locations</span>
+										  <span class="C_topSm"><%if location_admin?%>manage locations<%else%>list locations<%end%></span>
 										</span>
 								</a>
 						</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524104451) do
+ActiveRecord::Schema.define(:version => 20110526012150) do
 
   create_table "appointments", :force => true do |t|
     t.string   "day"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110524104451) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "location_id"
   end
 
   create_table "available_times", :force => true do |t|
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20110524104451) do
     t.integer  "dentistry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "locavailabilities", :force => true do |t|

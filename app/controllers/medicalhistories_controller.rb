@@ -74,9 +74,9 @@ class MedicalhistoriesController < ApplicationController
 #apptmt.day = Dayavailable.find(@medicalhistory.appointment).name
           apptmt.day = Date::DAYNAMES[@medicalhistory.aptmt_date.to_date.wday]
           datetime_local = "#{@medicalhistory.aptmt_date} #{@medicalhistory.aptmt_time}"
-          print "DATEEEEEEEEEEEEEEEEEEEE" + datetime_local
           apptmt.time = Time.parse(datetime_local)
           apptmt.user_id = @medicalhistory.user.id
+          apptmt.location_id = @medicalhistory.location_id
           apptmt.save
         end
       else

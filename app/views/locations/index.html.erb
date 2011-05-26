@@ -9,7 +9,6 @@
     <th>Address</th>
     <th>Phone</th>
     <th>Edit</th>
-    <th>Delete</th>
   </tr>
   <% for locations in @locations %>
     <tr>
@@ -17,12 +16,11 @@
       <td><%= locations.address %></td>
       <td><%= locations.phone %></td>
       <td><%= link_to "Edit", edit_location_path(locations) %></td>
-      <td><%= link_to "Destroy", locations, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
     </div>
   </div>
 </div>
-<p><%= link_to "New Locations", new_location_path %></p>
+<p><%= link_to "New Location", new_location_path %></p>
 <%end%>

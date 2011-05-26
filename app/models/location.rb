@@ -1,11 +1,12 @@
 class Location < ActiveRecord::Base
-  attr_accessible :day_tokens, :name, :address, :phone, :dentistry_id
+  attr_accessible :day_tokens, :name, :address, :phone, :dentistry_id, :user_id
 
   has_many :locavailability
   has_many  :dayavailables, :through => :locavailability
   belongs_to :dentistry
-  has_many :user
+  belongs_to :user
   has_many :medicalhistory
+  has_many :appointments
 
   attr_reader :day_tokens, :days_numbers
   def day_tokens=(ids)

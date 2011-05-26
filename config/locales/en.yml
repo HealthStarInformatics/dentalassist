@@ -5,6 +5,7 @@ en:
   time: 
     formats:
       default: "%m/%d/%Y"
+      appointment: "%m/%d/%Y  %I:%M %p"
 
 
   activerecord:

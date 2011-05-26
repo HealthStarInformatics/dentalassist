@@ -1,0 +1,38 @@
+<% if current_user %>
+
+<% if @appointments.size == 0 %>
+
+<div class="group">
+  <div class="wide_box">
+    <div class="inner">
+      <h2>You have not scheduled any appointments yet</h2>
+    </div>
+  </div>
+</div>
+<%else%>
+
+
+<div class="group">
+  <div class="wide_box">
+    <div class="inner">
+      <h2>All upcoming appointments</h2>
+<table id="line_items">
+  <tr>
+    <th width="25%">Patient</th>
+    <th>Location (Phone)</th>
+    <th>Appointment Time</th>
+  </tr>
+  <% for appointments in @appointments%>
+  <%info = Medicalhistory.select(:fname, :lastname, :home_phone).where("user_id = ?", appointments.user_id).first%>
+    <tr>
+      <td width="25%"><%= "#{info.fname} #{info.lastname}"%></td>
+      <td><%= appointments.location.name %> (<%=(appointments.location.phone)%>)</td>
+      <td><%= l appointments.time.to_time, :format=>:appointment%></td>
+    </tr>
+  <% end %>
+</table>
+    </div>
+  </div>
+</div>
+<%end%>
+<%end%>

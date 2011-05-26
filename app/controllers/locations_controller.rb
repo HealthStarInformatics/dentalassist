@@ -1,6 +1,8 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.all
+    if require_loc_admin
+      @locations = Location.where("user_id = ?", current_user.id)
+    end
   end
 
   def show
@@ -13,6 +15,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(params[:location])
+    @location.user_id = current_user.id
     if @location.save
       redirect_to @location, :notice => "Successfully created locations."
     else
@@ -25,9 +28,8 @@ class LocationsController < ApplicationController
   end
 
   def update
-    print "CAME HERRRRRRRRRRRRRRRRRRRRRRRRR"
     @location = Location.find(params[:id])
-    print "came here"
+    @location.user_id = current_user.id
     print params[:location].to_yaml
     if @location.update_attributes(params[:location])
       print "yo"
