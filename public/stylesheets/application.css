@@ -225,11 +225,12 @@ a {
 }
 
 #container {
+position: relative;
+top: 5.4em;
   width: 100%;
   margin-top: 5.4em;
   background-color: #FFF;
   padding: 20px 40px;
-  'border: solid 1px black;'
   margin-top: 20px;
   -moz-border-radius: 8px 8px 8px 8px;
   -webkit-border-radius: 8px 8px 8px 8px;
