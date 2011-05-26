@@ -1,25 +1,28 @@
 <% if require_loc_admin%>
-<table>
+
+<div class="group">
+  <div class="wide_box">
+    <div class="inner">
+<table id="line_items">
   <tr>
-    <th>Name</th>
+    <th width="25%">Name</th>
     <th>Address</th>
     <th>Phone</th>
-    <th>Hours</th>
-    <th>Dentistry</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
   <% for locations in @locations %>
     <tr>
-      <td><%= locations.name %></td>
+      <td width="25%"><%= locations.name %></td>
       <td><%= locations.address %></td>
       <td><%= locations.phone %></td>
-      <td><%= locations.hours %></td>
-      <td><%= locations.dentistry_id %></td>
-      <td><%= link_to "Show", locations %></td>
       <td><%= link_to "Edit", edit_location_path(locations) %></td>
       <td><%= link_to "Destroy", locations, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
-
+    </div>
+  </div>
+</div>
 <p><%= link_to "New Locations", new_location_path %></p>
 <%end%>
