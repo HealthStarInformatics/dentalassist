@@ -62,12 +62,9 @@
 </div>
 <%=f.error_messages%>
 	<%= render "#{@medicalhistory.current_step}_step", :f => f %>
-  <center>
-  <table align="center">
-  <tr>
-    <td style="width: 250px"><%= positive_button_submit_tag "Back", :name => "back_button" unless @medicalhistory.first_step?%></td>
-    <td><%= positive_button_submit_tag "Continue", {:class => "arrowright"} %></td>
-  </tr>
- </center> 
+  <div class="formbuttons">
+    <%= positive_button_submit_tag "Back", :name => "back_button" unless @medicalhistory.first_step?%>
+    <%= positive_button_submit_tag "Continue", {:class => "arrowright", :id=>"btn"} %></td>
+  </div>
 <% end %>
 <% end %>

@@ -55,6 +55,7 @@ class MedicalhistoriesController < ApplicationController
   end
 
   def create
+    print "HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
     session[:medicalhistory_params].deep_merge!(params[:medicalhistory]) if params[:medicalhistory]
     @medicalhistory= Medicalhistory.new(session[:medicalhistory_params])
     @medicalhistory.current_step = session[:form_step]

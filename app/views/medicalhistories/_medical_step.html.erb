@@ -1,9 +1,10 @@
 <fieldset>
   <legend>Medical History</legend>
 	<%= f.input :physician_name, :label=>"Physicians Name", :required=>false, :input_html => {:title => "came here"}%>
-    <%= f.input :medical_conditions, :label=>false, :collection => medical_conditons, :as => :check_boxes%>
+  <div id="medicalconditions">
+  <%= f.input :medical_conditions, :label=>false, :collection => medical_conditons, :as => :check_boxes%>
+  </div>
     <p class="line">* This condition may require antibiotic premedication for certain dental procedures</p>
-
 	<p id="question">Do you have any health problems that were not listed above or need further clarification?</p>
 	<%= f.input :other, :label=>false, :collection => %w{Yes No}, :as => :radio%> 
 	<p id="explain">If yes, explain:</p> <%= f.input :other_yes, :label=>false, :input_html => {:size => 55}%>

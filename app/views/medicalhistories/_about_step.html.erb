@@ -1,3 +1,11 @@
+<div id="test" style="display:none;">fancy box content</div>
+
+<fieldset>
+<legend>Registration</legend>
+			<%=f.fields_for :user do |builder|%>
+        <%= render "registration_form", :f => builder %>
+      <% end %>
+</fieldset>
 <fieldset>
 	  <legend>About you</legend>
       <%= f.input :location_id, :label => "Location", :collection => Location.where("dentistry_id = ?",1), :include_blank=>false, :label_html=>{:class=>"form_label"}%>
@@ -17,9 +25,6 @@
 			<%= f.input :biss_phone, :label => "Work Phone" ,  :input_html => {:id => 'phoneExt'},:label_html => {:class => "form_label"}%>
 			<%= f.input :pager , :input_html => {:id => 'pager'},:label_html => {:class => "form_label"}%>	
 			<%= f.input :cell_phone,  :input_html => {:id => 'cellphone'},:label_html => {:class => "form_label"}%>	
-			<%=f.fields_for :user do |builder|%>
-        <%= render "registration_form", :f => builder %>
-      <% end %>
       <%= f.input :emp, :label => "Employer",:label_html => {:class => "form_label"}%>	
 			<%= f.input :emp_term, :label => "How long there?" ,:label_html => {:class => "form_label"}%>
 			<%= f.input :occupation ,:label_html => {:class => "form_label"}%>	

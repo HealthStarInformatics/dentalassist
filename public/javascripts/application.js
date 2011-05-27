@@ -1,21 +1,23 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 $(function() {
-                $('#timepicker').timepicker({
-                    showPeriod: true,
-                    onMinuteShow: timepicker7OnMinuteShowCallback
-                });
-            function timepicker7OnHourShowCallback(hour) {
-                if ((hour > 20)) {
-                    return false;
-                }
-                return true;
-            }
-            function timepicker7OnMinuteShowCallback(hour, minute) {
-                if (minute == 05 || minute == 10 || minute == 15 || minute == 20 || minute == 25 || minute == 35
-                    || minute == 40 || minute == 45 || minute == 50 || minute == 55) { return false; }
-                return true;
-            }
+
+ 
+  $('#timepicker').timepicker({
+      showPeriod: true,
+      onMinuteShow: timepicker7OnMinuteShowCallback
+  });
+  function timepicker7OnHourShowCallback(hour) {
+      if ((hour > 20)) {
+          return false;
+      }
+      return true;
+  }
+  function timepicker7OnMinuteShowCallback(hour, minute) {
+      if (minute == 05 || minute == 10 || minute == 15 || minute == 20 || minute == 25 || minute == 35
+          || minute == 40 || minute == 45 || minute == 50 || minute == 55) { return false; }
+      return true;
+  }
 
     
   $(function() {
