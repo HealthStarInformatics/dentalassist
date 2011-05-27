@@ -1,7 +1,10 @@
 class LocationsController < ApplicationController
   def index
-    if require_loc_admin
+    if location_admin?
       @locations = Location.where("user_id = ?", current_user.id)
+    end
+    if super_admin?
+      @locations = Location.all
     end
   end
 
