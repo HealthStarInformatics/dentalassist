@@ -1,4 +1,4 @@
-<% if require_loc_admin || require_super_admin%>
+<% if location_admin? or super_admin?%>
 
 <div class="group">
   <div class="wide_box">
@@ -23,4 +23,8 @@
   </div>
 </div>
 <p><%= link_to "New Location", new_location_path %></p>
+<%else%>
+<%require_loc_admin%>
+
 <%end%>
+
