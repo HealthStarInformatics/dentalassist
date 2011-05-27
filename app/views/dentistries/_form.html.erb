@@ -1,5 +1,10 @@
+
+
 <%= form_for @dentistry do |f| %>
   <%= f.error_messages %>
+<div class="group">
+  <div class="wide_box">
+    <div class="inner">
   <table border="">
    <tr>
     <td><%= f.label :name %></td>
@@ -15,4 +20,7 @@
   </tr>
   <tr><td><%=positive_button_submit_tag "Add Dentistry"%></td></tr>
   </table>
+  </div>
+  </div>
+  </div>
 <% end %>

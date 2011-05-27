@@ -9,6 +9,8 @@ class AppointmentController < ApplicationController
       @appointments = Appointment.where("location_id in (?)",b )
     elsif normal_user?
       @appointments = Appointment.where("user_id = ?", current_user.id) 
+    elsif super_admin?
+      @appointments = Appointment.all
     end
   end
 

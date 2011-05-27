@@ -47,7 +47,6 @@
                   <a class="J_loginLink J_onClick headerLogin" href="/logout/">Logout</a>
                 <%elsif super_admin?%>
                   <%= link_to "Add Dentistry", new_dentistry_path%> |
-                  <%= link_to "Add Location", new_location_path%> |
                   <%= link_to "Edit Profile", edit_user_path(:current)%> |
                   <a class="J_loginLink J_onClick headerLogin" href="/logout/">Logout</a>
                 <%else%>
