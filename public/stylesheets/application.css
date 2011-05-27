@@ -435,16 +435,7 @@ input.collection_check_women {
   margin-left: 2px;
   width: auto;
 }
-fieldset {
-  border: none;
-}
 
-legend {
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
-  padding: 10px 10px 10px 10px;
-}
 
 #line_items {
   border: solid 1px #666;
@@ -601,15 +592,6 @@ legend {
 		  margin-bottom: 10px; 
 		  font-family: arial,serif
 		}
-		fieldset { 
-				  border: 0; 
-				  border: 5px solid #ddd; 
-				  margin-bottom: 10px; 
-				  width: 1024px;
-				  -moz-border-radius: 8px 8px 8px 8px;
-				  -webkit-border-radius: 8px 8px 8px 8px;
-		}
-		fieldset p { margin-top: 0; }
 		}
 table#line_items {
   color: #000000;
@@ -651,15 +633,6 @@ padding: 10px 10px 10px 10px;
 }
 
 
-		fieldset { 
-				  border: 0; 
-				  border: 5px solid #ddd; 
-				  margin-bottom: 10px; 
-				  width: 1024px;
-				  -moz-border-radius: 8px 8px 8px 8px;
-				  -webkit-border-radius: 8px 8px 8px 8px;
-		}
-		fieldset p { margin-top: 0; }
 		}
 .check_boxes input[type="checkbox"]
 {
